@@ -1,0 +1,402 @@
+leader_traits = {
+	
+	traditional_conservative = {
+		random = no
+		sprite = 20
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	centrist = {
+		random = no
+		sprite = 19
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	social_egalitarian = {
+		random = no
+		sprite = 18
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	collectivist_socialist = {
+		random = no
+		sprite = 17
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	vanguard_communist = {
+		random = no
+		sprite = 16
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	autocrat = {
+		random = no
+		sprite = 23
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	radical_democrat = {
+		random = no
+		sprite = 21
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	chauvinist_populist = {
+		random = no
+		sprite = 22
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	anarchist = {
+		random = no
+		sprite = 15
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	fundamentalist = {
+		random = no
+		sprite = 24
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	political_independent = {
+		sprite = 10
+		drift_defence_factor = 0.5
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+	#POLITICAL ALIGNMENT TRAITS
+
+
+	vanguard_communism_alignment = {
+		random = no
+		# Boosts Fascism
+		sprite = 16
+		vanguard_communism_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	collectivist_socialism_alignment = {
+		random = no
+		# Boosts Fascism
+		sprite = 17
+		collectivist_socialism_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	social_egalitarianism_alignment = {
+		random = no
+		# Boosts Fascism
+		sprite = 18
+		social_egalitarianism_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	centrism_alignment = {
+		random = no
+		# Boosts Fascism
+		sprite = 19
+		centrism_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	traditional_conservatism_alignment = {
+		random = no
+		# Boosts Fascism
+		sprite = 20
+		traditional_conservatism_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	radical_democracy_alignment = {
+		random = no
+		# Boosts Fascism
+		sprite = 21
+		radical_democracy_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	autocracy_alignment = {
+		random = no
+		# Boosts Fascism
+		sprite = 23
+		autocracy_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	chauvinist_populism_alignment = {
+		random = no
+		# Boosts Fascism
+		sprite = 22
+		chauvinist_populism_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	anarchism_alignment = {
+		random = no
+		# Boosts Fascism
+		sprite = 15
+		anarchism_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	fundamentalism_alignment = {
+		random = no
+		# Boosts Fascism
+		sprite = 24
+		fundamentalism_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	neutral_party = {
+		sprite = 10
+		random = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ideological_promoter = {
+		random = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+	#ADVISOR TRAITS
+
+
+	oil_magnate = {
+		random = yes
+		drift_defence_factor = 0.5
+		consumer_goods_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	clever_buisnessman = {
+		random = yes
+		consumer_goods_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	railroad_tycoon = {
+		random = yes
+		production_speed_infrastructure_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	influencial_writer = {
+		random = yes
+		political_power_factor = 0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	innovative_engineer = {
+		random = yes
+		research_time_factor = -0.02
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ingenious_scientist = {
+		random = yes
+		research_time_factor = -0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	efficient_administrator = {
+		random = yes
+		political_power_factor = 0.05
+		stability_factor = 0.02
+		#PP cost for advisor -5%
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	industrial_promoter = {
+		random = yes
+		production_speed_industrial_complex_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	great_urbanizer = {
+		random = yes
+		production_speed_infrastructure_factor = 0.05
+		production_speed_industrial_complex_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	controversial_figure = {
+		random = yes
+		political_power_factor = 0.05
+		stability_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	determined_expansionist = {
+		random = yes
+		justify_war_goal_time = -0.1
+		war_support_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	war_veteran = {
+		random = yes
+		training_time_factor = -0.1
+		war_support_factor = 0.02
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	friend_of_capitalism = {
+		random = yes
+		consumer_goods_factor = -0.1
+		political_power_factor = -0.15
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	working_class_figurehead = {
+		random = yes
+		political_power_factor = 0.1
+		stability_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	just_legislator = {
+		random = yes
+		political_power_factor = -0.05
+		stability_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# HEAD OF STATE TRAITS
+
+	hos_trait_partially_paralyzed = {
+		random = no
+		stability_factor = -0.08
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	hos_trait_colonial_monarch = {
+		random = no
+		political_power_factor = -0.3
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

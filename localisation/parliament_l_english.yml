@@ -1,0 +1,59 @@
+﻿l_english:
+  EOANB_RULING_PARTY_INFO:0 "The ruling party is §Y[Root.GetRulingParty] ([Root.GetRulingIdeologyNoun])§!"
+
+  EOANB_VAN_COM_PARTY_INFO:0 "Party issues of the §YVanguard Communists§!: \n    Trade Policy : §Y[Root.GetVanComTradeIssue]§!\n    Economic Policy : §Y[Root.GetVanComEconomicIssue]§!\n    Citizenship Policy : §Y[Root.GetVanComCitizenshipIssue]§!\n    War Policy : §Y[Root.GetVanComWarIssue]§!"
+  EOANB_COL_SOC_PARTY_INFO:0 "Party issues of the §YCollectivist Socialists§!: \n    Trade Policy : §Y[Root.GetColSocTradeIssue]§!\n    Economic Policy : §Y[Root.GetColSocEconomicIssue]§!\n    Citizenship Policy : §Y[Root.GetColSocCitizenshipIssue]§!\n    War Policy : §Y[Root.GetColSocWarIssue]§!"
+  EOANB_SOC_EGA_PARTY_INFO:0 "Party issues of the §YSocial Egalitarians§!: \n    Trade Policy : §Y[Root.GetSocEgaTradeIssue]§!\n    Economic Policy : §Y[Root.GetSocEgaEconomicIssue]§!\n    Citizenship Policy : §Y[Root.GetSocEgaCitizenshipIssue]§!\n    War Policy : §Y[Root.GetSocEgaWarIssue]§!"
+  EOANB_CEN_PARTY_INFO:0 "Party issues of the §YCentrists§!: \n    Trade Policy : §Y[Root.GetCenTradeIssue]§!\n    Economic Policy : §Y[Root.GetCenEconomicIssue]§!\n    Citizenship Policy : §Y[Root.GetCenCitizenshipIssue]§!\n    War Policy : §Y[Root.GetCenWarIssue]§!"
+  EOANB_TRA_CON_PARTY_INFO:0 "Party issues of the §YTraditional Conservatives§!: \n    Trade Policy : §Y[Root.GetTraConTradeIssue]§!\n    Economic Policy : §Y[Root.GetTraConEconomicIssue]§!\n    Citizenship Policy : §Y[Root.GetTraConCitizenshipIssue]§!\n    War Policy : §Y[Root.GetTraConWarIssue]§!"
+  EOANB_RAD_DEM_PARTY_INFO:0 "Party issues of the §YRadical Democrats§!: \n    Trade Policy : §Y[Root.GetRadDemTradeIssue]§!\n    Economic Policy : §Y[Root.GetRadDemEconomicIssue]§!\n    Citizenship Policy : §Y[Root.GetRadDemCitizenshipIssue]§!\n    War Policy : §Y[Root.GetRadDemWarIssue]§!"
+  EOANB_CHAUV_POP_PARTY_INFO:0 "Party issues of the §YChauvinist Populists§!: \n    Trade Policy : §Y[Root.GetChauvPopTradeIssue]§!\n    Economic Policy : §Y[Root.GetChauvPopEconomicIssue]§!\n    Citizenship Policy : §Y[Root.GetChauvPopCitizenshipIssue]§!\n    War Policy : §Y[Root.GetChauvPopWarIssue]§!"
+  EOANB_AUT_PARTY_INFO:0 "Party issues of the §YAutocrats§!: \n Trade Policy : \n    Trade Policy : §Y[Root.GetAutTradeIssue]§!\n    Economic Policy : §Y[Root.GetAutEconomicIssue]§!\n    Citizenship Policy : §Y[Root.GetAutCitizenshipIssue]§!\n    War Policy : §Y[Root.GetAutWarIssue]§!"
+  EOANB_FUN_PARTY_INFO:0 "Party issues of the §YFundamentalists§!: \n Trade Policy : \n    Trade Policy : §Y[Root.GetFunTradeIssue]§!\n    Economic Policy : §Y[Root.GetFunEconomicIssue]§!\n    Citizenship Policy : §Y[Root.GetFunCitizenshipIssue]§!\n    War Policy : §Y[Root.GetFunWarIssue]§!"
+
+  var_issue_trade_1:0 "Free Trade"
+  var_issue_trade_2:0 "Protectionism"
+
+  var_issue_economy_1:0 "Laissez-Faire"
+  var_issue_economy_2:0 "Interventionism"
+  var_issue_economy_3:0 "State Capitalism"
+  var_issue_economy_4:0 "Planned Economy"
+
+  var_issue_citizenship_1:0 "Residency"
+  var_issue_citizenship_2:0 "Limited Citizenship"
+  var_issue_citizenship_3:0 "Full Citizenship"
+
+  var_issue_war_policies_1:0 "Jingoism"
+  var_issue_war_policies_2:0 "Pro-Military"
+  var_issue_war_policies_3:0 "Anti-Military"
+  var_issue_war_policies_4:0 "Pacifist"
+
+
+  free_trade_desc:0 "Party Opinions : \n    Free Trade §G+§!\n    Protectionism §R-§!"
+  export_focus_desc:0 "Party Opinions : \n    Free Trade §G+§!\n    Protectionism §Y.§!"
+  limited_exports_desc:0 "Party Opinions : \n    Free Trade §Y.§!\n    Protectionism §G+§!"
+  closed_economy_desc:0 "Party Opinions : \n    Free Trade §R-§!\n    Protectionism §G+§!"
+
+
+  parliament_seats.1.t:0 "Setting starting weights"
+  parliament_seats.1.d:0 ""
+  parliament_seats.1.a:0 "Ok"
+
+  parliament_seats.2.t:0 "Legislative Elections"
+  parliament_seats.2.d:0 ""
+  parliament_seats.2.a:0 "Ok"
+
+  parliament_seats.2.t:0 "Seats GFX"
+  parliament_seats.2.d:0 ""
+  parliament_seats.2.a:0 "Fancy"
+
+  parliament_seats.2.t:0 "Setting Party Issues"
+  parliament_seats.2.d:0 ""
+  parliament_seats.2.a:0 "#politics"
+
+  parliament_election.1.t:0 "Leader Elections"
+  parliament_election.1.d:0 ""
+  parliament_election.1.a:0 "Communist"
+  parliament_election.1.f:0 "Democratic"
+  parliament_election.1.h:0 "Fascist"
+  parliament_election.1.i:0 "Autocratic"
