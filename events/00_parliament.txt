@@ -9341,8 +9341,8 @@ country_event = {
           # ISSUES OF THE VAN_COM
 
       set_variable = { 
-        var = issue_van_com_tra
-        value = 2
+        var = issue_van_com_cul
+        value = 4
       }
 
       set_variable = { 
@@ -9351,8 +9351,8 @@ country_event = {
       }
 
       set_variable = { 
-        var = issue_van_com_cit
-        value = 3
+        var = issue_van_com_dem
+        value = 4
       }
 
       set_variable = { 
@@ -9363,8 +9363,8 @@ country_event = {
           # ISSUES OF THE COL_SOC
 
       set_variable = { 
-        var = issue_col_soc_tra
-        value = 2
+        var = issue_col_soc_cul
+        value = 4
       }
 
       set_variable = { 
@@ -9373,8 +9373,8 @@ country_event = {
       }
 
       set_variable = { 
-        var = issue_col_soc_cit
-        value = 3
+        var = issue_col_soc_dem
+        value = 4
       }
 
       set_variable = { 
@@ -9385,8 +9385,8 @@ country_event = {
           # ISSUES OF THE SOC_EGA
 
       set_variable = { 
-        var = issue_soc_ega_tra
-        value = 1
+        var = issue_soc_ega_cul
+        value = 4
       }
 
       set_variable = { 
@@ -9395,8 +9395,8 @@ country_event = {
       }
 
       set_variable = { 
-        var = issue_soc_ega_cit
-        value = 3
+        var = issue_soc_ega_dem
+        value = 4
       }
 
       set_variable = { 
@@ -9407,8 +9407,8 @@ country_event = {
           # ISSUES OF THE CEN
 
       set_variable = { 
-        var = issue_cen_tra
-        value = 1
+        var = issue_cen_cul
+        value = 3
       }
 
       set_variable = { 
@@ -9417,19 +9417,19 @@ country_event = {
       }
 
       set_variable = { 
-        var = issue_cen_cit
+        var = issue_cen_dem
         value = 3
       }
 
       set_variable = { 
         var = issue_cen_war
-        value = 2
+        value = 3
       }
 
           # ISSUES OF THE TRA_CON
 
       set_variable = { 
-        var = issue_tra_con_tra
+        var = issue_tra_con_cul
         value = 2
       }
 
@@ -9439,7 +9439,7 @@ country_event = {
       }
 
       set_variable = { 
-        var = issue_tra_con_cit
+        var = issue_tra_con_dem
         value = 3
       }
 
@@ -9451,7 +9451,7 @@ country_event = {
           # ISSUES OF THE RAD_DEM
 
       set_variable = { 
-        var = issue_rad_dem_tra
+        var = issue_rad_dem_cul
         value = 2
       }
 
@@ -9461,7 +9461,7 @@ country_event = {
       }
 
       set_variable = { 
-        var = issue_rad_dem_cit
+        var = issue_rad_dem_dem
         value = 2
       }
 
@@ -9473,18 +9473,18 @@ country_event = {
           # ISSUES OF THE AUT
 
       set_variable = { 
-        var = issue_aut_tra
-        value = 2
+        var = issue_aut_cul
+        value = 1
       }
 
       set_variable = { 
         var = issue_aut_eco
-        value = 2
+        value = 3
       }
 
       set_variable = { 
-        var = issue_aut_cit
-        value = 2
+        var = issue_aut_dem
+        value = 1
       }
 
       set_variable = { 
@@ -9495,8 +9495,8 @@ country_event = {
           # ISSUES OF THE CHAUV_POP
 
       set_variable = { 
-        var = issue_chauv_pop_tra
-        value = 2
+        var = issue_chauv_pop_cul
+        value = 1
       }
 
       set_variable = { 
@@ -9505,8 +9505,8 @@ country_event = {
       }
 
       set_variable = { 
-        var = issue_chauv_pop_cit
-        value = 1
+        var = issue_chauv_pop_dem
+        value = 2
       }
 
       set_variable = { 
@@ -9517,8 +9517,8 @@ country_event = {
           # ISSUES OF THE FUN
 
       set_variable = { 
-        var = issue_fun_tra
-        value = 2
+        var = issue_fun_cul
+        value = 1
       }
 
       set_variable = { 
@@ -9527,13 +9527,13 @@ country_event = {
       }
 
       set_variable = { 
-        var = issue_fun_cit
+        var = issue_fun_dem
         value = 1
       }
 
       set_variable = { 
         var = issue_fun_war
-        value = 2
+        value = 3
       }
     }
   }

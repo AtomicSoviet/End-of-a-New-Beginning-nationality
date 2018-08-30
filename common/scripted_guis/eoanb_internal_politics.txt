@@ -14,14 +14,52 @@ scripted_gui = {
 					limit = { NOT = { has_global_flag = TTT_opened } }
 					set_global_flag = TTT_opened
 				}
-				else = {
-					clr_global_flag = TTT_opened
-				}
 			}
 		}
 		triggers = {
 			open_TTT_click_enabled = {
 				NOT = { has_global_flag = TTT_daily_refresh }
+			}
+		}
+	}
+
+	internal_politics_reform_civ_lib_religion_screen = {
+		context_type = player_context
+
+		window_name = "eoanb_internal_politics_reform_civ_lib_religion_screen"
+
+		visible = {
+			has_global_flag = reform_civ_lib_religion
+		}
+
+		effects = {
+			close_reform_civ_lib_religion_screen_click = {
+				clr_global_flag = reform_screen_open
+				clr_global_flag = reform_civ_lib_religion
+			}
+		}
+
+		triggers = {
+
+		}
+	}
+
+	internal_politics_reform_screen = {
+		context_type = player_context
+
+		window_name = "eoanb_internal_politics_reform_container"
+
+		visible = {
+			has_global_flag = reform_screen_open
+		}
+
+		effects = {
+			open_civ_lib_religion_click = {
+				if = {
+					limit = { NOT = { has_global_flag = reform_screen_open } }
+					set_global_flag = reform_screen_subcat_open
+					set_global_flag = reform_civ_lib_religion
+				}
 			}
 		}
 	}
@@ -36,7 +74,15 @@ scripted_gui = {
 		}
 
 		effects = {
-
+			open_reform_screen_click = {
+				if = {
+					NOT = { has_global_flag = reform_screen_open }
+					set_global_flag = reform_screen_open
+				}
+				else = {
+					clr_global_flag = reform_screen_open
+				}
+			}
 		}
 
 		triggers = {

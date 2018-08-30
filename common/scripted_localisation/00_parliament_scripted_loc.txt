@@ -9,155 +9,361 @@
 # that'll be used if trigger passes
 
 defined_text = {
-	name = GetVanComTradeIssue
-	text = { # Free Trade
+	name = GetParliamentGovType
+	text = { # Parliament
 		trigger = {
-			check_variable = { issue_van_com_tra = 1 }
+			OR = {
+				has_idea = constitutional_monarchy
+				has_idea = parliamentary_monarchy
+				has_idea = parliamentary_republic
+			}
 		}
-		localization_key = var_issue_trade_1
+		localization_key = parliament_name_1
 	}
 
-	text = { # Protectionism
+	text = { # Council
 		trigger = {
-			check_variable = { issue_van_com_tra = 2 }
+			OR = {
+				has_idea = absolute_monarchy
+				has_idea = free_city
+			}
 		}
-		localization_key = var_issue_trade_2
-	}
-}
-
-defined_text = {
-	name = GetColSocTradeIssue
-	text = { # Free Trade
-		trigger = {
-			check_variable = { issue_col_soc_tra = 1 }
-		}
-		localization_key = var_issue_trade_1
+		localization_key = parliament_name_2
 	}
 
-	text = { # Protectionism
+	text = { # Assembly
 		trigger = {
-			check_variable = { issue_col_soc_tra = 2 }
+			has_idea = semi_presidential_republic
 		}
-		localization_key = var_issue_trade_2
-	}
-}
-
-defined_text = {
-	name = GetSocEgaTradeIssue
-	text = { # Free Trade
-		trigger = {
-			check_variable = { issue_soc_ega_tra = 1 }
-		}
-		localization_key = var_issue_trade_1
+		localization_key = parliament_name_3
 	}
 
-	text = { # Protectionism
+	text = { # Senate
 		trigger = {
-			check_variable = { issue_soc_ega_tra = 2 }
+			has_idea = presidential_republic
 		}
-		localization_key = var_issue_trade_2
-	}
-}
-
-defined_text = {
-	name = GetCenTradeIssue
-	text = { # Free Trade
-		trigger = {
-			check_variable = { issue_cen_tra = 1 }
-		}
-		localization_key = var_issue_trade_1
+		localization_key = parliament_name_4
 	}
 
-	text = { # Protectionism
+	text = { # Central Committee
 		trigger = {
-			check_variable = { issue_cen_tra = 2 }
+			has_idea = socialist_republic
 		}
-		localization_key = var_issue_trade_2
-	}
-}
-
-defined_text = {
-	name = GetTraConTradeIssue
-	text = { # Free Trade
-		trigger = {
-			check_variable = { issue_tra_con_tra = 1 }
-		}
-		localization_key = var_issue_trade_1
+		localization_key = parliament_name_5
 	}
 
-	text = { # Protectionism
+	text = { # State Council
 		trigger = {
-			check_variable = { issue_tra_con_tra = 2 }
+			has_idea = socialist_state
 		}
-		localization_key = var_issue_trade_2
+		localization_key = parliament_name_6
+	}
+
+	text = { # Revolutionary Council
+		trigger = {
+			has_idea = revolutionary_government
+		}
+		localization_key = parliament_name_7
+	}
+
+	text = { # High Command
+		trigger = {
+			has_idea = totalitarian_dictatorship
+		}
+		localization_key = parliament_name_8
+	}
+
+	text = { # Government Junta
+		trigger = {
+			has_idea = military_junta
+		}
+		localization_key = parliament_name_9
+	}
+
+	text = { # Burning Building
+		trigger = {
+			has_idea = anarchy
+		}
+		localization_key = parliament_name_10
 	}
 }
 
 defined_text = {
-	name = GetRadDemTradeIssue
-	text = { # Free Trade
+	name = GetVanComCulturalIssue
+	text = { # Reactionary
 		trigger = {
-			check_variable = { issue_rad_dem_tra = 1 }
+			check_variable = { issue_van_com_cul = 1 }
 		}
-		localization_key = var_issue_trade_1
+		localization_key = var_issue_culture_1
 	}
 
-	text = { # Protectionism
+	text = { # Conservative
 		trigger = {
-			check_variable = { issue_rad_dem_tra = 2 }
+			check_variable = { issue_van_com_cul = 2 }
 		}
-		localization_key = var_issue_trade_2
-	}
-}
-
-defined_text = {
-	name = GetAutTradeIssue
-	text = { # Free Trade
-		trigger = {
-			check_variable = { issue_aut_tra = 1 }
-		}
-		localization_key = var_issue_trade_1
+		localization_key = var_issue_culture_2
 	}
 
-	text = { # Protectionism
+	text = { # Liberal
 		trigger = {
-			check_variable = { issue_aut_tra = 2 }
+			check_variable = { issue_van_com_cul = 3 }
 		}
-		localization_key = var_issue_trade_2
+		localization_key = var_issue_culture_3
+	}
+
+	text = { # Progressive
+		trigger = {
+			check_variable = { issue_van_com_cul = 4 }
+		}
+		localization_key = var_issue_culture_4
 	}
 }
 
 defined_text = {
-	name = GetChauvPopTradeIssue
-	text = { # Free Trade
+	name = GetColSocCulturalIssue
+	text = { # Reactionary
 		trigger = {
-			check_variable = { issue_chauv_pop_tra = 1 }
+			check_variable = { issue_col_soc_cul = 1 }
 		}
-		localization_key = var_issue_trade_1
+		localization_key = var_issue_culture_1
 	}
 
-	text = {
+	text = { # Conservative
 		trigger = {
-			check_variable = { issue_chauv_pop_tra = 2 }
+			check_variable = { issue_col_soc_cul = 2 }
 		}
-		localization_key = var_issue_trade_2
+		localization_key = var_issue_culture_2
+	}
+
+	text = { # Liberal
+		trigger = {
+			check_variable = { issue_col_soc_cul = 3 }
+		}
+		localization_key = var_issue_culture_3
+	}
+
+	text = { # Progressive
+		trigger = {
+			check_variable = { issue_col_soc_cul = 4 }
+		}
+		localization_key = var_issue_culture_4
 	}
 }
 
 defined_text = {
-	name = GetFunTradeIssue
-	text = { # Free Trade
+	name = GetSocEgaCulturalIssue
+	text = { # Reactionary
 		trigger = {
-			check_variable = { issue_fun_tra = 1 }
+			check_variable = { issue_soc_ega_cul = 1 }
 		}
-		localization_key = var_issue_trade_1
+		localization_key = var_issue_culture_1
 	}
 
-	text = { # Protectionism
+	text = { # Conservative
 		trigger = {
-			check_variable = { issue_fun_tra = 2 }
+			check_variable = { issue_soc_ega_cul = 2 }
 		}
-		localization_key = var_issue_trade_2
+		localization_key = var_issue_culture_2
+	}
+
+	text = { # Liberal
+		trigger = {
+			check_variable = { issue_soc_ega_cul = 3 }
+		}
+		localization_key = var_issue_culture_3
+	}
+
+	text = { # Progressive
+		trigger = {
+			check_variable = { issue_soc_ega_cul = 4 }
+		}
+		localization_key = var_issue_culture_4
+	}
+}
+
+defined_text = {
+	name = GetCenCulturalIssue
+	text = { # Reactionary
+		trigger = {
+			check_variable = { issue_cen_cul = 1 }
+		}
+		localization_key = var_issue_culture_1
+	}
+
+	text = { # Conservative
+		trigger = {
+			check_variable = { issue_cen_cul = 2 }
+		}
+		localization_key = var_issue_culture_2
+	}
+
+	text = { # Liberal
+		trigger = {
+			check_variable = { issue_cen_cul = 3 }
+		}
+		localization_key = var_issue_culture_3
+	}
+
+	text = { # Progressive
+		trigger = {
+			check_variable = { issue_cen_cul = 4 }
+		}
+		localization_key = var_issue_culture_4
+	}
+}
+
+defined_text = {
+	name = GetTraConCulturalIssue
+	text = { # Reactionary
+		trigger = {
+			check_variable = { issue_tra_con_cul = 1 }
+		}
+		localization_key = var_issue_culture_1
+	}
+
+	text = { # Conservative
+		trigger = {
+			check_variable = { issue_tra_con_cul = 2 }
+		}
+		localization_key = var_issue_culture_2
+	}
+
+	text = { # Liberal
+		trigger = {
+			check_variable = { issue_tra_con_cul = 3 }
+		}
+		localization_key = var_issue_culture_3
+	}
+
+	text = { # Progressive
+		trigger = {
+			check_variable = { issue_tra_con_cul = 4 }
+		}
+		localization_key = var_issue_culture_4
+	}
+}
+
+defined_text = {
+	name = GetRadDemCulturalIssue
+	text = { # Reactionary
+		trigger = {
+			check_variable = { issue_rad_dem_cul = 1 }
+		}
+		localization_key = var_issue_culture_1
+	}
+
+	text = { # Conservative
+		trigger = {
+			check_variable = { issue_rad_dem_cul = 2 }
+		}
+		localization_key = var_issue_culture_2
+	}
+
+	text = { # Liberal
+		trigger = {
+			check_variable = { issue_rad_dem_cul = 3 }
+		}
+		localization_key = var_issue_culture_3
+	}
+
+	text = { # Progressive
+		trigger = {
+			check_variable = { issue_rad_dem_cul = 4 }
+		}
+		localization_key = var_issue_culture_4
+	}
+}
+
+defined_text = {
+	name = GetAutCulturalIssue
+	text = { # Reactionary
+		trigger = {
+			check_variable = { issue_aut_cul = 1 }
+		}
+		localization_key = var_issue_culture_1
+	}
+
+	text = { # Conservative
+		trigger = {
+			check_variable = { issue_aut_cul = 2 }
+		}
+		localization_key = var_issue_culture_2
+	}
+
+	text = { # Liberal
+		trigger = {
+			check_variable = { issue_aut_cul = 3 }
+		}
+		localization_key = var_issue_culture_3
+	}
+
+	text = { # Progressive
+		trigger = {
+			check_variable = { issue_aut_cul = 4 }
+		}
+		localization_key = var_issue_culture_4
+	}
+}
+
+defined_text = {
+	name = GetChauvPopCulturalIssue
+	text = { # Reactionary
+		trigger = {
+			check_variable = { issue_chauv_pop_cul = 1 }
+		}
+		localization_key = var_issue_culture_1
+	}
+
+	text = { # Conservative
+		trigger = {
+			check_variable = { issue_chauv_pop_cul = 2 }
+		}
+		localization_key = var_issue_culture_2
+	}
+
+	text = { # Liberal
+		trigger = {
+			check_variable = { issue_chauv_pop_cul = 3 }
+		}
+		localization_key = var_issue_culture_3
+	}
+
+	text = { # Progressive
+		trigger = {
+			check_variable = { issue_chauv_pop_cul = 4 }
+		}
+		localization_key = var_issue_culture_4
+	}
+}
+
+defined_text = {
+	name = GetFunCulturalIssue
+	text = { # Reactionary
+		trigger = {
+			check_variable = { issue_fun_cul = 1 }
+		}
+		localization_key = var_issue_culture_1
+	}
+
+	text = { # Conservative
+		trigger = {
+			check_variable = { issue_fun_cul = 2 }
+		}
+		localization_key = var_issue_culture_2
+	}
+
+	text = { # Liberal
+		trigger = {
+			check_variable = { issue_fun_cul = 3 }
+		}
+		localization_key = var_issue_culture_3
+	}
+
+	text = { # Progressive
+		trigger = {
+			check_variable = { issue_fun_cul = 4 }
+		}
+		localization_key = var_issue_culture_4
 	}
 }
 
@@ -451,218 +657,281 @@ defined_text = {
 
 
 defined_text = {
-	name = GetVanComCitizenshipIssue
-	text = { # Residency
+	name = GetVanComDemographicIssue
+	text = { # Aristocratic
 		trigger = {
-			check_variable = { issue_van_com_cit = 1 }
+			check_variable = { issue_van_com_dem = 1 }
 		}
-		localization_key = var_issue_citizenship_1
+		localization_key = var_issue_demography_1
 	}
 
-	text = { # Limited Citizenship
+	text = { # Elitist
 		trigger = {
-			check_variable = { issue_van_com_cit = 2 }
+			check_variable = { issue_van_com_dem = 2 }
 		}
-		localization_key = var_issue_citizenship_2
+		localization_key = var_issue_demography_2
 	}
 
-	text = { # Full Citizenship
+	text = { # Favoritist
 		trigger = {
-			check_variable = { issue_van_com_cit = 3 }
+			check_variable = { issue_van_com_dem = 3 }
 		}
-		localization_key = var_issue_citizenship_3
-	}
-}
-
-defined_text = {
-	name = GetColSocCitizenshipIssue
-	text = { # Residency
-		trigger = {
-			check_variable = { issue_col_soc_cit = 1 }
-		}
-		localization_key = var_issue_citizenship_1
+		localization_key = var_issue_demography_3
 	}
 
-	text = { # Limited Citizenship
+	text = { # Egalitarian
 		trigger = {
-			check_variable = { issue_col_soc_cit = 2 }
+			check_variable = { issue_van_com_dem = 4 }
 		}
-		localization_key = var_issue_citizenship_2
-	}
-
-	text = { # Full Citizenship
-		trigger = {
-			check_variable = { issue_col_soc_cit = 3 }
-		}
-		localization_key = var_issue_citizenship_3
+		localization_key = var_issue_demography_4
 	}
 }
 
 defined_text = {
-	name = GetSocEgaCitizenshipIssue
-	text = { # Residency
+	name = GetColSocDemographicIssue
+	text = { # Aristocratic
 		trigger = {
-			check_variable = { issue_soc_ega_cit = 1 }
+			check_variable = { issue_col_soc_dem = 1 }
 		}
-		localization_key = var_issue_citizenship_1
+		localization_key = var_issue_demography_1
 	}
 
-	text = { # Limited Citizenship
+	text = { # Elitist
 		trigger = {
-			check_variable = { issue_soc_ega_cit = 2 }
+			check_variable = { issue_col_soc_dem = 2 }
 		}
-		localization_key = var_issue_citizenship_2
+		localization_key = var_issue_demography_2
 	}
 
-	text = { # Full Citizenship
+	text = { # Favoritist
 		trigger = {
-			check_variable = { issue_soc_ega_cit = 3 }
+			check_variable = { issue_col_soc_dem = 3 }
 		}
-		localization_key = var_issue_citizenship_3
-	}
-}
-
-defined_text = {
-	name = GetCenCitizenshipIssue
-	text = { # Residency
-		trigger = {
-			check_variable = { issue_cen_cit = 1 }
-		}
-		localization_key = var_issue_citizenship_1
+		localization_key = var_issue_demography_3
 	}
 
-	text = { # Limited Citizenship
+	text = { # Egalitarian
 		trigger = {
-			check_variable = { issue_cen_cit = 2 }
+			check_variable = { issue_col_soc_dem = 4 }
 		}
-		localization_key = var_issue_citizenship_2
-	}
-
-	text = { # Full Citizenship
-		trigger = {
-			check_variable = { issue_cen_cit = 3 }
-		}
-		localization_key = var_issue_citizenship_3
+		localization_key = var_issue_demography_4
 	}
 }
 
 defined_text = {
-	name = GetTraConCitizenshipIssue
-	text = { # Residency
+	name = GetSocEgaDemographicIssue
+	text = { # Aristocratic
 		trigger = {
-			check_variable = { issue_tra_con_cit = 1 }
+			check_variable = { issue_soc_ega_dem = 1 }
 		}
-		localization_key = var_issue_citizenship_1
+		localization_key = var_issue_demography_1
 	}
 
-	text = { # Limited Citizenship
+	text = { # Elitist
 		trigger = {
-			check_variable = { issue_tra_con_cit = 2 }
+			check_variable = { issue_soc_ega_dem = 2 }
 		}
-		localization_key = var_issue_citizenship_2
+		localization_key = var_issue_demography_2
 	}
 
-	text = { # Full Citizenship
+	text = { # Favoritist
 		trigger = {
-			check_variable = { issue_tra_con_cit = 3 }
+			check_variable = { issue_soc_ega_dem = 3 }
 		}
-		localization_key = var_issue_citizenship_3
-	}
-}
-
-defined_text = {
-	name = GetRadDemCitizenshipIssue
-	text = { # Residency
-		trigger = {
-			check_variable = { issue_rad_dem_cit = 1 }
-		}
-		localization_key = var_issue_citizenship_1
+		localization_key = var_issue_demography_3
 	}
 
-	text = { # Limited Citizenship
+	text = { # Egalitarian
 		trigger = {
-			check_variable = { issue_rad_dem_cit = 2 }
+			check_variable = { issue_soc_ega_dem = 4 }
 		}
-		localization_key = var_issue_citizenship_2
-	}
-
-	text = { # Full Citizenship
-		trigger = {
-			check_variable = { issue_rad_dem_cit = 3 }
-		}
-		localization_key = var_issue_citizenship_3
+		localization_key = var_issue_demography_4
 	}
 }
 
 defined_text = {
-	name = GetChauvPopCitizenshipIssue
-	text = { # Residency
+	name = GetCenDemographicIssue
+	text = { # Aristocratic
 		trigger = {
-			check_variable = { issue_chauv_pop_cit = 1 }
+			check_variable = { issue_cen_dem = 1 }
 		}
-		localization_key = var_issue_citizenship_1
+		localization_key = var_issue_demography_1
 	}
 
-	text = { # Limited Citizenship
+	text = { # Elitist
 		trigger = {
-			check_variable = { issue_chauv_pop_cit = 2 }
+			check_variable = { issue_cen_dem = 2 }
 		}
-		localization_key = var_issue_citizenship_2
+		localization_key = var_issue_demography_2
 	}
 
-	text = { # Full Citizenship
+	text = { # Favoritist
 		trigger = {
-			check_variable = { issue_chauv_pop_cit = 3 }
+			check_variable = { issue_cen_dem = 3 }
 		}
-		localization_key = var_issue_citizenship_3
-	}
-}
-
-defined_text = {
-	name = GetAutCitizenshipIssue
-	text = { # Residency
-		trigger = {
-			check_variable = { issue_aut_cit = 1 }
-		}
-		localization_key = var_issue_citizenship_1
+		localization_key = var_issue_demography_3
 	}
 
-	text = { # Limited Citizenship
+	text = { # Egalitarian
 		trigger = {
-			check_variable = { issue_aut_cit = 2 }
+			check_variable = { issue_cen_dem = 4 }
 		}
-		localization_key = var_issue_citizenship_2
-	}
-
-	text = { # Full Citizenship
-		trigger = {
-			check_variable = { issue_aut_cit = 3 }
-		}
-		localization_key = var_issue_citizenship_3
+		localization_key = var_issue_demography_4
 	}
 }
 
 defined_text = {
-	name = GetFunCitizenshipIssue
-	text = { # Residency
+	name = GetTraConDemographicIssue
+	text = { # Aristocratic
 		trigger = {
-			check_variable = { issue_fun_cit = 1 }
+			check_variable = { issue_tra_con_dem = 1 }
 		}
-		localization_key = var_issue_citizenship_1
+		localization_key = var_issue_demography_1
 	}
 
-	text = { # Limited Citizenship
+	text = { # Elitist
 		trigger = {
-			check_variable = { issue_fun_cit = 2 }
+			check_variable = { issue_tra_con_dem = 2 }
 		}
-		localization_key = var_issue_citizenship_2
+		localization_key = var_issue_demography_2
 	}
 
-	text = { # Full Citizenship
+	text = { # Favoritist
 		trigger = {
-			check_variable = { issue_fun_cit = 3 }
+			check_variable = { issue_tra_con_dem = 3 }
 		}
-		localization_key = var_issue_citizenship_3
+		localization_key = var_issue_demography_3
+	}
+
+	text = { # Egalitarian
+		trigger = {
+			check_variable = { issue_tra_con_dem = 4 }
+		}
+		localization_key = var_issue_demography_4
+	}
+}
+
+defined_text = {
+	name = GetRadDemDemographicIssue
+	text = { # Aristocratic
+		trigger = {
+			check_variable = { issue_rad_dem_dem = 1 }
+		}
+		localization_key = var_issue_demography_1
+	}
+
+	text = { # Elitist
+		trigger = {
+			check_variable = { issue_rad_dem_dem = 2 }
+		}
+		localization_key = var_issue_demography_2
+	}
+
+	text = { # Favoritist
+		trigger = {
+			check_variable = { issue_rad_dem_dem = 3 }
+		}
+		localization_key = var_issue_demography_3
+	}
+
+	text = { # Egalitarian
+		trigger = {
+			check_variable = { issue_rad_dem_dem = 4 }
+		}
+		localization_key = var_issue_demography_4
+	}
+}
+
+defined_text = {
+	name = GetChauvPopDemographicIssue
+	text = { # Aristocratic
+		trigger = {
+			check_variable = { issue_chauv_pop_dem = 1 }
+		}
+		localization_key = var_issue_demography_1
+	}
+
+	text = { # Elitist
+		trigger = {
+			check_variable = { issue_chauv_pop_dem = 2 }
+		}
+		localization_key = var_issue_demography_2
+	}
+
+	text = { # Favoritist
+		trigger = {
+			check_variable = { issue_chauv_pop_dem = 3 }
+		}
+		localization_key = var_issue_demography_3
+	}
+
+	text = { # Egalitarian
+		trigger = {
+			check_variable = { issue_chauv_pop_dem = 4 }
+		}
+		localization_key = var_issue_demography_4
+	}
+}
+
+defined_text = {
+	name = GetAutDemographicIssue
+	text = { # Aristocratic
+		trigger = {
+			check_variable = { issue_aut_dem = 1 }
+		}
+		localization_key = var_issue_demography_1
+	}
+
+	text = { # Elitist
+		trigger = {
+			check_variable = { issue_aut_dem = 2 }
+		}
+		localization_key = var_issue_demography_2
+	}
+
+	text = { # Favoritist
+		trigger = {
+			check_variable = { issue_aut_dem = 3 }
+		}
+		localization_key = var_issue_demography_3
+	}
+
+	text = { # Egalitarian
+		trigger = {
+			check_variable = { issue_aut_dem = 4 }
+		}
+		localization_key = var_issue_demography_4
+	}
+}
+
+defined_text = {
+	name = GetFunDemographicIssue
+	text = { # Aristocratic
+		trigger = {
+			check_variable = { issue_fun_dem = 1 }
+		}
+		localization_key = var_issue_demography_1
+	}
+
+	text = { # Elitist
+		trigger = {
+			check_variable = { issue_fun_dem = 2 }
+		}
+		localization_key = var_issue_demography_2
+	}
+
+	text = { # Favoritist
+		trigger = {
+			check_variable = { issue_fun_dem = 3 }
+		}
+		localization_key = var_issue_demography_3
+	}
+
+	text = { # Egalitarian
+		trigger = {
+			check_variable = { issue_fun_dem = 4 }
+		}
+		localization_key = var_issue_demography_4
 	}
 }
 

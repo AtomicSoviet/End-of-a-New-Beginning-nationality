@@ -11,8 +11,30 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_bg_500_600"
+		texturefile = "gfx/interface/bg_500_600.dds"
+	}
+
+	spriteType = {
+		name = "GFX_bg_480_64"
+		texturefile = "gfx/interface/bg_480_64.dds"
+	}
+
+	spriteType = {
 		name = "GFX_internal_politics_window_bg"
 		texturefile = "gfx/interface/internal_politics_window_bg.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+
+	spriteType = {
+		name = "GFX_internal_politics_reform_window_bg"
+		texturefile = "gfx/interface/internal_politics_reform_window_bg.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+
+	spriteType = {
+		name = "GFX_internal_politics_reform_button"
+		texturefile = "gfx/interface/internal_politics_reform_button.dds"
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
 

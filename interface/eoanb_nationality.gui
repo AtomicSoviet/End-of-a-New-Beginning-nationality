@@ -72,7 +72,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "eoanb_internal_politics_container"
 		position = {x=377 y=128}
-		size = { width=583 height=720 }
+		size = { width=583 height=484 }
 
 		fade_time = 300
 		fade_type = linear
@@ -86,8 +86,24 @@ guiTypes = {
 		instantTextboxType = {
 			name = "title"
 			position = {x=22 y=16}
+			font = "hoi_30header"
+			text = "[Root.GetName]'s [Root.GetParliamentGovType]"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+
+		buttonType = {
+			name = "open_reform_screen"
+			position = { x = 219 y = 436 }
+			spriteType = "GFX_button_148x34"
+		}
+
+		instantTextboxType = {
+			name = "title"
+			position = {x=239 y=446}
 			font = "hoi_36header"
-			text = "[Root.GetName]"
+			text = "Reforms"
 			maxWidth = 500
 			maxHeight = 23
 			format = left
@@ -2647,6 +2663,251 @@ guiTypes = {
 			maxWidth = 340
 			maxHeight = 23
 			format = left
+		}
+
+		instantTextboxType = {
+			name = "reform_button_text"
+			position = {x=250 y=450}
+			font = "hoi_18mbs"
+			text = "Reform"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+	}
+
+	containerWindowType = {
+		name = "eoanb_internal_politics_reform_container"
+		position = {x=377 y=128}
+		size = { width=849 height=510 }
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_internal_politics_reform_window_bg"
+		}
+
+		iconType = {
+			name = "internal_politics_button_1"
+			position = {x=69 y=38}
+			spriteType = GFX_button_148x34
+		}
+
+		iconType = {
+			name = "internal_politics_button_2"
+			position = {x=259 y=38}
+			spriteType = GFX_button_148x34
+		}
+
+		iconType = {
+			name = "internal_politics_button_3"
+			position = {x=449 y=38}
+			spriteType = GFX_button_148x34
+		}
+
+		iconType = {
+			name = "internal_politics_button_4"
+			position = {x=639 y=38}
+			spriteType = GFX_button_148x34
+		}
+
+		buttonType = {
+			name = "open_civ_lib_religion"
+			quadTextureSprite = "GFX_internal_politics_reform_button"
+			position = { x= 48 y = 81 }
+			pdx_tooltip = "INT_POL_TOOLTIP"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+	}
+
+	containerWindowType = {
+		name = "eoanb_internal_politics_reform_civ_lib_religion_screen"
+		position = { x = 540 y = 37 }
+		size = { width=849 height=710 }
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_internal_politics_reform_window_bg"
+		}
+
+		containerWindowType = {
+			name = "grid"
+			position = { x = 20 y = 20 }
+			size = { width=500 height=600 }
+			verticalScrollbar = "right_vertical_slider"
+			margin = { top = 13 bottom = 10 }
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_bg_500_600"
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state"
+				position = { x = 10 y = 10 }
+				size = { width = 480 height = 64 }
+				pdx_tooltip = "atheistic_state_desc"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_bg_480_64"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_atheistic_state
+					pdx_tooltip = "atheistic_state_desc"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state_check"
+					position = { x = 240 y = 0 }
+					spriteType = GFX_generic_checkbox
+					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
+					scale = 1.3
+					frame = 2
+				}
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state_text"
+					position = { x = 52 y = 10 }
+					font = "hoi_18mbs"
+					text = "atheistic_state"
+					maxWidth = 180
+					maxHeight = 100
+					format = center
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state"
+				position = { x = 10 y = 84 }
+				size = { width = 480 height = 64 }
+				pdx_tooltip = "secular_state_desc"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_bg_480_64"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_secular_state
+					pdx_tooltip = "secular_state_desc"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state_check"
+					position = { x = 240 y = 0 }
+					spriteType = GFX_generic_checkbox
+					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
+					scale = 1.3
+					frame = 2
+				}
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state_text"
+					position = { x = 52 y = 10 }
+					font = "hoi_18mbs"
+					text = "secular_state"
+					maxWidth = 180
+					maxHeight = 100
+					format = center
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion"
+				position = { x = 10 y = 158 }
+				size = { width = 480 height = 64 }
+				pdx_tooltip = "state_religion_desc"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_bg_480_64"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_state_religion
+					pdx_tooltip = "state_religion_desc"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion_check"
+					position = { x = 240 y = 0 }
+					spriteType = GFX_generic_checkbox
+					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
+					scale = 1.3
+					frame = 2
+				}
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion_text"
+					position = { x = 52 y = 10 }
+					font = "hoi_18mbs"
+					text = "state_religion"
+					maxWidth = 180
+					maxHeight = 100
+					format = center
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state"
+				position = { x = 10 y = 232 }
+				size = { width = 480 height = 64 }
+				pdx_tooltip = "theocratic_state_desc"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_bg_480_64"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_theocratic_state
+					pdx_tooltip = "theocratic_state_desc"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state_check"
+					position = { x = 240 y = 0 }
+					spriteType = GFX_generic_checkbox
+					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
+					scale = 1.3
+					frame = 2
+				}
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state_text"
+					position = { x = 52 y = 10 }
+					font = "hoi_18mbs"
+					text = "theocratic_state"
+					maxWidth = 180
+					maxHeight = 100
+					format = center
+				}
+			}
+		}
+
+		buttonType = {
+			name = "close_reform_civ_lib_religion_screen"
+			position = { x = 15 y = 15 }
+			spriteType = "GFX_closebutton"
+			scale = 1
 		}
 	}
 }
