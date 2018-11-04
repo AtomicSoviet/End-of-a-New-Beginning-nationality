@@ -34,13 +34,27 @@ scripted_gui = {
 
 		effects = {
 			close_reform_civ_lib_religion_screen_click = {
-				clr_global_flag = reform_screen_open
+				clr_global_flag = reform_screen_subcat_open
 				clr_global_flag = reform_civ_lib_religion
 			}
 		}
 
 		triggers = {
+			eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state_check_visible = {
+				NOT = { has_idea = atheistic_state }
+			}
 
+			eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state_check_visible = {
+				NOT = { has_idea = secular_state }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion_check_visible = {
+				NOT = { has_idea = state_religion }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state_check_visible = {
+				NOT = { has_idea = theocratic_state }
+			}
 		}
 	}
 
@@ -54,12 +68,373 @@ scripted_gui = {
 		}
 
 		effects = {
+			eoanb_reforms_escape_click = {
+				if = {
+					limit = {
+						is_ai = no
+					}
+					clr_global_flag = reform_screen_open
+				}
+			}
+
 			open_civ_lib_religion_click = {
 				if = {
-					limit = { NOT = { has_global_flag = reform_screen_open } }
+					limit = { NOT = { has_global_flag = reform_screen_subcat_open } }
 					set_global_flag = reform_screen_subcat_open
 					set_global_flag = reform_civ_lib_religion
 				}
+			}
+		}
+
+		triggers = {
+			eoanb_internal_politics_reform_civ_lib_religion_button_atheistic_state_icon_visible = {
+				has_idea = atheistic_state
+			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_button_secular_state_icon_visible = {
+				has_idea = secular_state
+			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_button_state_religion_icon_visible = {
+				has_idea = state_religion
+			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_button_theocratic_state_icon_visible = {
+				has_idea = theocratic_state
+			}
+
+
+
+			eoanb_internal_politics_reform_civ_lib_education_button_oral_tradition_icon_visible = {
+				has_idea = oral_tradition
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_button_privileged_education_icon_visible = {
+				has_idea = privileged_education
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_button_open_schools_icon_visible = {
+				has_idea = open_schools
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_button_compulsory_education_icon_visible = {
+				has_idea = compulsory_education
+			}
+
+			##################################################
+			##################################################
+			##################################################
+
+			eoanb_internal_politics_reform_eco_trade_laws_button_free_trade_icon_visible = {
+				has_idea = free_trade
+			}
+
+			eoanb_internal_politics_reform_eco_trade_laws_button_export_focus_icon_visible = {
+				has_idea = export_focus
+			}
+
+			eoanb_internal_politics_reform_eco_trade_laws_button_limited_exports_icon_visible = {
+				has_idea = limited_exports
+			}
+
+			eoanb_internal_politics_reform_eco_trade_laws_button_closed_economy_icon_visible = {
+				has_idea = closed_economy
+			}
+
+
+
+			eoanb_internal_politics_reform_eco_tax_rates_button_very_high_taxes_icon_visible = {
+				has_idea = very_high_taxes
+			}
+
+			eoanb_internal_politics_reform_eco_tax_rates_button_high_taxes_icon_visible = {
+				has_idea = high_taxes
+			}
+
+			eoanb_internal_politics_reform_eco_tax_rates_button_normal_taxes_icon_visible = {
+				has_idea = normal_taxes
+			}
+
+			eoanb_internal_politics_reform_eco_tax_rates_button_low_taxes_icon_visible = {
+				has_idea = low_taxes
+			}
+
+			eoanb_internal_politics_reform_eco_tax_rates_button_very_low_taxes_icon_visible = {
+				has_idea = very_low_taxes
+			}
+
+
+
+			eoanb_internal_politics_reform_eco_trade_laws_button_free_trade_icon_visible = {
+				has_idea = free_trade
+			}
+
+			eoanb_internal_politics_reform_eco_trade_laws_button_export_focus_icon_visible = {
+				has_idea = export_focus
+			}
+
+			eoanb_internal_politics_reform_eco_trade_laws_button_limited_exports_icon_visible = {
+				has_idea = limited_exports
+			}
+
+			eoanb_internal_politics_reform_eco_trade_laws_button_closed_economy_icon_visible = {
+				has_idea = closed_economy
+			}
+
+
+
+			eoanb_internal_politics_reform_eco_child_labour_button_cl_legal_icon_visible = {
+				has_idea = cl_legal
+			}
+
+			eoanb_internal_politics_reform_eco_child_labour_button_cl_restricted_icon_visible = {
+				has_idea = cl_restricted
+			}
+
+			eoanb_internal_politics_reform_eco_child_labour_button_cl_illegal_icon_visible = {
+				has_idea = cl_illegal
+			}
+
+
+
+			eoanb_internal_politics_reform_eco_maximum_workhours_button_unlimited_work_day_icon_visible = {
+				has_idea = unlimited_work_day
+			}
+
+			eoanb_internal_politics_reform_eco_maximum_workhours_button_fourteen_hour_work_day_icon_visible = {
+				has_idea = fourteen_hour_work_day
+			}
+
+			eoanb_internal_politics_reform_eco_maximum_workhours_button_twelve_hour_work_day_icon_visible = {
+				has_idea = twelve_hour_work_day
+			}
+
+			eoanb_internal_politics_reform_eco_maximum_workhours_button_ten_hour_work_day_icon_visible = {
+				has_idea = ten_hour_work_day
+			}
+
+			eoanb_internal_politics_reform_eco_maximum_workhours_button_eight_hour_work_day_icon_visible = {
+				has_idea = eight_hour_work_day
+			}
+
+
+
+			eoanb_internal_politics_reform_eco_land_property_button_lp_serfdom_icon_visible = {
+				has_idea = lp_serfdom
+			}
+
+			eoanb_internal_politics_reform_eco_land_property_button_lp_land_estates_day_icon_visible = {
+				has_idea = lp_land_estates
+			}
+
+			eoanb_internal_politics_reform_eco_land_property_button_lp_land_purchase_icon_visible = {
+				has_idea = lp_land_purchase
+			}
+
+			eoanb_internal_politics_reform_eco_land_property_button_lp_peasant_holdings_icon_visible = {
+				has_idea = lp_peasant_holdings
+			}
+
+			eoanb_internal_politics_reform_eco_land_property_button_lp_collectivization_icon_visible = {
+				has_idea = lp_collectivization
+			}
+
+
+
+			eoanb_internal_politics_reform_eco_military_spendage_button_prussian_military_spendage_icon_visible = {
+				has_idea = prussian_military_spendage
+			}
+
+			eoanb_internal_politics_reform_eco_military_spendage_button_ten_percent_icon_visible = {
+				has_idea = ten_percent
+			}
+
+			eoanb_internal_politics_reform_eco_military_spendage_button_five_percent_icon_visible = {
+				has_idea = five_percent
+			}
+
+			eoanb_internal_politics_reform_eco_military_spendage_button_three_percent_icon_visible = {
+				has_idea = three_percent
+			}
+
+			eoanb_internal_politics_reform_eco_military_spendage_button_two_percent_icon_visible = {
+				has_idea = two_percent
+			}
+
+			eoanb_internal_politics_reform_eco_military_spendage_button_one_percent_icon_visible = {
+				has_idea = one_percent
+			}
+
+			##################################################
+			##################################################
+			##################################################
+
+			eoanb_internal_politics_reform_pop_growth_policies_button_enforced_growth_icon_visible = {
+				has_idea = enforced_growth
+			}
+
+			eoanb_internal_politics_reform_pop_growth_policies_button_encouraged_growth_icon_visible = {
+				has_idea = encouraged_growth
+			}
+
+			eoanb_internal_politics_reform_pop_growth_policies_button_stagnation_growth_icon_visible = {
+				has_idea = stagnation_growth
+			}
+
+			eoanb_internal_politics_reform_pop_growth_policies_button_disencouraged_growth_icon_visible = {
+				has_idea = disencouraged_growth
+			}
+
+			eoanb_internal_politics_reform_pop_growth_policies_button_restricted_growth_icon_visible = {
+				has_idea = restricted_growth
+			}
+
+
+
+			eoanb_internal_politics_reform_pop_border_laws_button_closed_borders_icon_visible = {
+				has_idea = closed_borders
+			}
+
+			eoanb_internal_politics_reform_pop_border_laws_button_border_control_icon_visible = {
+				has_idea = border_control
+			}
+
+			eoanb_internal_politics_reform_pop_border_laws_button_open_borders_icon_visible = {
+				has_idea = open_borders
+			}
+
+			eoanb_internal_politics_reform_pop_border_laws_button_no_borders_icon_visible = {
+				has_idea = no_borders
+			}
+
+
+
+			eoanb_internal_politics_reform_pop_discriminatory_laws_button_usa_slavery_law_icon_visible = {
+				has_idea = usa_slavery_law
+			}
+
+			eoanb_internal_politics_reform_pop_discriminatory_laws_button_tribal_slavery_icon_visible = {
+				has_idea = tribal_slavery
+			}
+
+			eoanb_internal_politics_reform_pop_discriminatory_laws_button_slavery_icon_visible = {
+				has_idea = slavery
+			}
+
+			eoanb_internal_politics_reform_pop_discriminatory_laws_button_racial_laws_icon_visible = {
+				has_idea = racial_laws
+			}
+
+			eoanb_internal_politics_reform_pop_discriminatory_laws_button_segregation_icon_visible = {
+				has_idea = segregation
+			}
+
+			eoanb_internal_politics_reform_pop_discriminatory_laws_button_limited_equality_icon_visible = {
+				has_idea = limited_equality
+			}
+
+			eoanb_internal_politics_reform_pop_discriminatory_laws_button_full_equality_icon_visible = {
+				has_idea = full_equality
+			}
+
+
+
+			eoanb_internal_politics_reform_pop_suffrage_button_absolutism_icon_visible = {
+				has_idea = absolutism
+			}
+
+			eoanb_internal_politics_reform_pop_suffrage_button_parliamentary_suffrage_icon_visible = {
+				has_idea = parliamentary_suffrage
+			}
+
+			eoanb_internal_politics_reform_pop_suffrage_button_property_owners_suffrage_icon_visible = {
+				has_idea = property_owners_suffrage
+			}
+
+			eoanb_internal_politics_reform_pop_suffrage_button_universal_male_suffrage_icon_visible = {
+				has_idea = universal_male_suffrage
+			}
+
+			eoanb_internal_politics_reform_pop_suffrage_button_universal_suffrage_icon_visible = {
+				has_idea = universal_suffrage
+			}
+
+
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_disarmed_nation_icon_visible = {
+				has_idea = disarmed_nation
+			}
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_volunteer_only_icon_visible = {
+				has_idea = volunteer_only
+			}
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_limited_conscription_icon_visible = {
+				has_idea = limited_conscription
+			}
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_extensive_conscription_icon_visible = {
+				has_idea = extensive_conscription
+			}
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_service_by_requirement_icon_visible = {
+				has_idea = service_by_requirement
+			}
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_all_adults_serve_icon_visible = {
+				has_idea = all_adults_serve
+			}
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_scraping_the_barrel_icon_visible = {
+				has_idea = scraping_the_barrel
+			}
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_manpower_tribal_warriors_icon_visible = {
+				has_idea = manpower_tribal_warriors
+			}
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_manpower_tribal_every_tenth_icon_visible = {
+				has_idea = manpower_tribal_every_tenth
+			}
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_manpower_tribal_every_fifth_icon_visible = {
+				has_idea = manpower_tribal_every_fifth
+			}
+
+			eoanb_internal_politics_reform_pop_mobilization_laws_button_manpower_tribal_everyone_icon_visible = {
+				has_idea = manpower_tribal_everyone
+			}
+
+			##################################################
+			##################################################
+			##################################################
+
+			eoanb_internal_politics_reform_int_bud_economic_mobilization_button_undisturbed_isolation_icon_visible = {
+				has_idea = undisturbed_isolation
+			}
+
+			eoanb_internal_politics_reform_int_bud_economic_mobilization_button_isolation_icon_visible = {
+				has_idea = isolation
+			}
+
+			eoanb_internal_politics_reform_int_bud_economic_mobilization_button_civilian_economy_icon_visible = {
+				has_idea = civilian_economy
+			}
+
+			eoanb_internal_politics_reform_int_bud_economic_mobilization_button_low_economic_mobilisation_icon_visible = {
+				has_idea = low_economic_mobilisation
+			}
+
+			eoanb_internal_politics_reform_int_bud_economic_mobilization_button_partial_economic_mobilisation_icon_visible = {
+				has_idea = partial_economic_mobilisation
+			}
+
+			eoanb_internal_politics_reform_int_bud_economic_mobilization_button_war_economy_icon_visible = {
+				has_idea = war_economy
+			}
+
+			eoanb_internal_politics_reform_int_bud_economic_mobilization_button_tot_economic_mobilisation_icon_visible = {
+				has_idea = tot_economic_mobilisation
 			}
 		}
 	}
@@ -76,11 +451,32 @@ scripted_gui = {
 		effects = {
 			open_reform_screen_click = {
 				if = {
-					NOT = { has_global_flag = reform_screen_open }
+					limit = {
+						NOT = { has_global_flag = reform_screen_open }
+					}
 					set_global_flag = reform_screen_open
 				}
 				else = {
 					clr_global_flag = reform_screen_open
+				}
+			}
+
+			call_for_elections_button_click = {
+				if = {
+					limit = {
+						is_ai = no
+					}
+					add_political_power = -50
+					country_event = { id = parliament_election.1 }
+				}
+			}
+
+			eoanb_internal_politics_container_escape_click = {
+				if = {
+					limit = {
+						is_ai = no
+					}
+					clr_global_flag = TTT_opened
 				}
 			}
 		}

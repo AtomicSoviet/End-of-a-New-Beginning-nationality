@@ -1,6 +1,113 @@
 ﻿add_namespace = parliament_seats
 add_namespace = parliament_weight
 add_namespace = parliament_election
+add_namespace = parliament_vote
+add_namespace = legitimacy
+
+country_event = {
+  id = legitimacy.1
+  title = legitimacy.1.t
+  desc = legitimacy.1.d
+
+  is_triggered_only = yes
+
+  option = {
+    name = legitimacy.1.a
+
+    every_country = {
+      set_variable = { 
+        var = legitimacy
+        value = 0.5
+      }
+
+      clamp_variable = {
+        var = legitimacy
+        min = 0
+        max = 1
+      }
+    }
+  }
+}
+
+country_event = {
+  id = parliament_vote.110 # The Atheist State Act
+  title = parliament_vote.110.t
+  desc = parliament_vote.110.d
+
+  is_triggered_only = yes
+
+  option = { # Let's vote in a month
+    name = parliament_vote.110.a
+  }
+
+  option = { # This is urgent, vote immediatly
+    name = parliament_vote.110.b
+  }
+
+  option = { # Abandon the idea
+    name = parliament_vote.110.c
+  }
+}
+
+country_event = {
+  id = parliament_vote.120 # The Laïcité Act
+  title = parliament_vote.120.t
+  desc = parliament_vote.120.d
+
+  is_triggered_only = yes
+
+  option = { # Let's vote in two weeks
+    name = parliament_vote.120.a
+  }
+
+  option = { # This is urgent, vote immediatly
+    name = parliament_vote.120.b
+  }
+
+  option = { # Abandon the idea
+    name = parliament_vote.120.c
+  }
+}
+
+country_event = {
+  id = parliament_vote.130 # The State Religion Act
+  title = parliament_vote.130.t
+  desc = parliament_vote.130.d
+
+  is_triggered_only = yes
+
+  option = { # Let's vote in two weeks
+    name = parliament_vote.130.a
+  }
+
+  option = { # This is urgent, vote immediatly
+    name = parliament_vote.130.b
+  }
+
+  option = { # Abandon the idea
+    name = parliament_vote.130.c
+  }
+}
+
+country_event = {
+  id = parliament_vote.140 # The Absolute Theocracy Act
+  title = parliament_vote.140.t
+  desc = parliament_vote.140.d
+
+  is_triggered_only = yes
+
+  option = { # Let's vote in two weeks
+    name = parliament_vote.140.a
+  }
+
+  option = { # This is urgent, vote immediatly
+    name = parliament_vote.140.b
+  }
+
+  option = { # Abandon the idea
+    name = parliament_vote.140.c
+  }
+}
 
 #######################################################################
 
@@ -511,7 +618,7 @@ country_event = { # Seats Calculation ### NEED REWORK VANILLA
       }
 
       multiply_variable = { 
-        var = van_com_seat_not_normalized 
+        var = col_soc_seat_not_normalized 
         value = 255
       }
 
@@ -673,9 +780,9 @@ country_event = { # Seats Calculation ### NEED REWORK VANILLA
 #######################################################################
 
 country_event = { # Election Calculation ### NEED REWORK VANILLA
-  id = parliament_election.1
-  title = parliament_election.1.t
-  desc = parliament_election.1.d
+  id = parliament_election.0
+  title = parliament_election.0.t
+  desc = parliament_election.0.d
 
   trigger = {
     NOT = {
@@ -686,6 +793,18 @@ country_event = { # Election Calculation ### NEED REWORK VANILLA
   mean_time_to_happen = {
     days = 2
   }
+
+  immediate = {
+    country_event = { id = parliament_election.1 }
+  }
+}
+
+country_event = { # Election Calculation ### NEED REWORK VANILLA
+  id = parliament_election.1
+  title = parliament_election.1.t
+  desc = parliament_election.1.d
+
+  is_triggered_only = yes
 
   immediate = {
     add_timed_idea = { 

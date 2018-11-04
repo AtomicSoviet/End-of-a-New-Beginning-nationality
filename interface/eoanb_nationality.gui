@@ -70,9 +70,28 @@ guiTypes = {
 	}
 
 	containerWindowType = {
+		name = "eoanb_legitimacy_score_container"
+		position = { x=249 y=8 }
+		
+		instantTextBoxType = {
+			name ="eoanb_legitimacy_score_text"
+			position = { x=0 y=0 }
+			font = "hoi_18mbs"
+			text = "TEST [?ROOT.legitimacy|0]%"
+			format = right
+			maxWidth = 60
+			maxHeight = 24
+			fixedsize = yes
+			
+			pdx_tooltip = "EOANB_LEGITIMACY_EFFECT"
+			pdx_tooltip_delayed = "EOANB_LEGITIMACY_DELAYED_TOOLTIP"
+		}
+	}
+
+	containerWindowType = {
 		name = "eoanb_internal_politics_container"
-		position = {x=377 y=128}
-		size = { width=583 height=484 }
+		position = {x=300 y=200}
+		size = { width=583 height=492 }
 
 		fade_time = 300
 		fade_type = linear
@@ -81,6 +100,13 @@ guiTypes = {
 		background = {
 			name = "Background"
 			spriteType = "GFX_internal_politics_window_bg"
+		}
+
+		buttonType = {
+			name = "eoanb_internal_politics_container_escape" 
+			position = { x=530 y=15 }	
+			spriteType = "GFX_closebutton"
+			scale = 1
 		}
 
 		instantTextboxType = {
@@ -95,108 +121,231 @@ guiTypes = {
 
 		buttonType = {
 			name = "open_reform_screen"
-			position = { x = 219 y = 436 }
-			spriteType = "GFX_button_148x34"
+			position = { x=190 y=390 }
+			spriteType = GFX_internal_politics_small_button
+			frame = 2
+			pdx_tooltip = "EOANB_REFORM_BUTTON"
 		}
 
-		instantTextboxType = {
-			name = "title"
-			position = {x=239 y=446}
-			font = "hoi_36header"
-			text = "Reforms"
-			maxWidth = 500
-			maxHeight = 23
-			format = left
+		buttonType = {
+			name = "call_for_elections_button"
+			position = {x=120 y=390}
+			spriteType = GFX_internal_politics_small_button
+			frame = 1
+			pdx_tooltip = "EOANB_CALL_ELECTION_BUTTON"
 		}
 
 		##############################################################
 		#	IDEOLOGIES
 		##############################################################
 
-		iconType = {
-			name = "internal_politics_ideology_icon_anarchism"
-			position = {x=409 y=64}
-			spriteType = GFX_ideology_anarchism_group
-			pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+		containerWindowType = {
+			name = "eoanb_internal_politics_weights_container"
+			position = {x=25 y=75}
+			size = { width=583 height=720 }
+
+			background = {
+				name = "Background_weights"
+				spriteType = "GFX_internal_politics_weights_bg"
+			}
+
+			instantTextboxType = {
+				name = "parl_seats_title"
+				position = {x=70 y=30}
+				font = "hoi_36header"
+				text = "Parliament"
+				maxWidth = 340
+				maxHeight = 23
+				format = left
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_weights_text_container"
+				position = {x=30 y=95}
+				size = { width=583 height=720 }
+
+				instantTextboxType = {
+					name = "parl_van_com_seats"
+					position = {x=0 y=0}
+					font = "hoi_18mbs"
+					text = "Vanguard Communist : [?This.parl_van_com_seats_count] ([?This.parl_van_com_seats_weight] %)"
+					maxWidth = 340
+					maxHeight = 23
+					format = left
+				}
+
+				instantTextboxType = {
+					name = "parl_col_soc_seats"
+					position = {x=0 y=21}
+					font = "hoi_18mbs"
+					text = "Collectivist Socialist : [?This.parl_col_soc_seats_count] ([?This.parl_col_soc_seats_weight] %)"
+					maxWidth = 340
+					maxHeight = 23
+					format = left
+				}
+
+				instantTextboxType = {
+					name = "parl_soc_ega_seats"
+					position = {x=0 y=42}
+					font = "hoi_18mbs"
+					text = "Social Egalitarian : [?This.parl_soc_ega_seats_count] ([?This.parl_soc_ega_seats_weight] %)"
+					maxWidth = 340
+					maxHeight = 23
+					format = left
+				}
+
+				instantTextboxType = {
+					name = "parl_cen_seats"
+					position = {x=0 y=63}
+					font = "hoi_18mbs"
+					text = "Centrist : [?This.parl_cen_seats_count] ([?This.parl_cen_seats_weight] %)"
+					maxWidth = 340
+					maxHeight = 23
+					format = left
+				}
+
+				instantTextboxType = {
+					name = "parl_tra_con_seats"
+					position = {x=0 y=84}
+					font = "hoi_18mbs"
+					text = "Traditional Conservative : [?This.parl_tra_con_seats_count] ([?This.parl_tra_con_seats_weight] %)"
+					maxWidth = 340
+					maxHeight = 23
+					format = left
+				}
+
+				instantTextboxType = {
+					name = "parl_rad_dem_seats"
+					position = {x=0 y=105}
+					font = "hoi_18mbs"
+					text = "Radical Democrat : [?This.parl_rad_dem_seats_count] ([?This.parl_rad_dem_seats_weight] %)"
+					maxWidth = 340
+					maxHeight = 23
+					format = left
+				}
+
+				instantTextboxType = {
+					name = "parl_chauv_pop_seats"
+					position = {x=0 y=126}
+					font = "hoi_18mbs"
+					text = "Chauvinist Populist : [?This.parl_chauv_pop_seats_count] ([?This.parl_chauv_pop_seats_weight] %)"
+					maxWidth = 340
+					maxHeight = 23
+					format = left
+				}
+
+				instantTextboxType = {
+					name = "parl_aut_seats"
+					position = {x=0 y=147}
+					font = "hoi_18mbs"
+					text = "Autocrat : [?This.parl_aut_seats_count] ([?This.parl_aut_seats_weight] %)"
+					maxWidth = 340
+					maxHeight = 23
+					format = left
+				}
+
+				instantTextboxType = {
+					name = "parl_fun_seats"
+					position = {x=0 y=168}
+					font = "hoi_18mbs"
+					text = "Fundamentalist : [?This.parl_fun_seats_count] ([?This.parl_fun_seats_weight] %)"
+					maxWidth = 340
+					maxHeight = 23
+					format = left
+				}
+			}
 		}
 
-		iconType = {
-			name = "internal_politics_ideology_icon_vanguard_communism"
-			position = {x=409 y=64}
-			spriteType = GFX_ideology_vanguard_communism_group
-			pdx_tooltip = "EOANB_RULING_PARTY_INFO"
-		}
+		##############################################################
+		#	SEATS
+		##############################################################
 
-		iconType = {
-			name = "internal_politics_ideology_icon_collectivist_socialism"
-			position = {x=409 y=64}
-			spriteType = GFX_ideology_collectivist_socialism_group
-			pdx_tooltip = "EOANB_RULING_PARTY_INFO"
-		}
+		containerWindowType = {
+			name = "eoanb_internal_politics_seats_container"
+			position = {x=377 y=140}
+			size = { width=583 height=720 }
 
-		iconType = {
-			name = "internal_politics_ideology_icon_social_egalitarianism"
-			position = {x=409 y=64}
-			spriteType = GFX_ideology_social_egalitarianism_group
-			pdx_tooltip = "EOANB_RULING_PARTY_INFO"
-		}
+			containerWindowType = {
+				name = "eoanb_internal_politics_ruling_ideology_container"
+				position = {x=30 y=-64}
+				size = { width=583 height=720 }
 
-		iconType = {
-			name = "internal_politics_ideology_icon_centrism"
-			position = {x=409 y=64}
-			spriteType = GFX_ideology_centrism_group
-			pdx_tooltip = "EOANB_RULING_PARTY_INFO"
-		}
+				iconType = {
+					name = "internal_politics_ideology_icon_anarchism"
+					position = {x=0 y=0}
+					spriteType = GFX_ideology_anarchism_group
+					pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+				}
 
-		iconType = {
-			name = "internal_politics_ideology_icon_traditional_conservatism"
-			position = {x=409 y=64}
-			spriteType = GFX_ideology_traditional_conservatism_group
-			pdx_tooltip = "EOANB_RULING_PARTY_INFO"
-		}
+				iconType = {
+					name = "internal_politics_ideology_icon_vanguard_communism"
+					position = {x=0 y=0}
+					spriteType = GFX_ideology_vanguard_communism_group
+					pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+				}
 
-		iconType = {
-			name = "internal_politics_ideology_icon_radical_democracy"
-			position = {x=409 y=64}
-			spriteType = GFX_ideology_radical_democracy_group
-			pdx_tooltip = "EOANB_RULING_PARTY_INFO"
-		}
+				iconType = {
+					name = "internal_politics_ideology_icon_collectivist_socialism"
+					position = {x=0 y=0}
+					spriteType = GFX_ideology_collectivist_socialism_group
+					pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+				}
 
-		iconType = {
-			name = "internal_politics_ideology_icon_chauvinist_populism"
-			position = {x=409 y=64}
-			spriteType = GFX_ideology_chauvinist_populism_group
-			pdx_tooltip = "EOANB_RULING_PARTY_INFO"
-		}
+				iconType = {
+					name = "internal_politics_ideology_icon_social_egalitarianism"
+					position = {x=0 y=0}
+					spriteType = GFX_ideology_social_egalitarianism_group
+					pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+				}
 
-		iconType = {
-			name = "internal_politics_ideology_icon_autocracy"
-			position = {x=409 y=64}
-			spriteType = GFX_ideology_autocracy_group
-			pdx_tooltip = "EOANB_RULING_PARTY_INFO"
-		}
+				iconType = {
+					name = "internal_politics_ideology_icon_centrism"
+					position = {x=0 y=0}
+					spriteType = GFX_ideology_centrism_group
+					pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+				}
 
-		iconType = {
-			name = "internal_politics_ideology_icon_fundamentalism"
-			position = {x=409 y=64}
-			spriteType = GFX_ideology_fundamentalism_group
-			pdx_tooltip = "EOANB_RULING_PARTY_INFO"
-		}
+				iconType = {
+					name = "internal_politics_ideology_icon_traditional_conservatism"
+					position = {x=0 y=0}
+					spriteType = GFX_ideology_traditional_conservatism_group
+					pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+				}
 
-#		containerWindowType = {
-#			name = "eoanb_internal_politics_seats_container"
-#			position = {x=200 y=100}
-#			size = { width=583 height=720 }
+				iconType = {
+					name = "internal_politics_ideology_icon_radical_democracy"
+					position = {x=0 y=0}
+					spriteType = GFX_ideology_radical_democracy_group
+					pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+				}
 
-			##############################################################
-			#	SEATS
-			##############################################################
+				iconType = {
+					name = "internal_politics_ideology_icon_chauvinist_populism"
+					position = {x=0 y=0}
+					spriteType = GFX_ideology_chauvinist_populism_group
+					pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+				}
+
+				iconType = {
+					name = "internal_politics_ideology_icon_autocracy"
+					position = {x=0 y=0}
+					spriteType = GFX_ideology_autocracy_group
+					pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+				}
+
+				iconType = {
+					name = "internal_politics_ideology_icon_fundamentalism"
+					position = {x=0 y=0}
+					spriteType = GFX_ideology_fundamentalism_group
+					pdx_tooltip = "EOANB_RULING_PARTY_INFO"
+				}
+			}
 
 			#	SEAT 1
 
 			iconType = {
 				name = "internal_politics_parliament_seat_1_van_com"
-				position = {x=377 y=128}
+				position = {x=0 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -204,7 +353,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_1_col_soc"
-				position = {x=377 y=128}
+				position = {x=0 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -212,7 +361,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_1_soc_ega"
-				position = {x=377 y=128}
+				position = {x=0 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -220,7 +369,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_1_cen"
-				position = {x=377 y=128}
+				position = {x=0 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -228,7 +377,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_1_tra_con"
-				position = {x=377 y=128}
+				position = {x=0 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -236,7 +385,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_1_rad_dem"
-				position = {x=377 y=128}
+				position = {x=0 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -244,7 +393,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_1_chauv_pop"
-				position = {x=377 y=128}
+				position = {x=0 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -252,7 +401,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_1_aut"
-				position = {x=377 y=128}
+				position = {x=0 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -260,7 +409,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_1_fun"
-				position = {x=377 y=128}
+				position = {x=0 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -270,7 +419,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_2_van_com"
-				position = {x=409 y=128}
+				position = {x=32 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -278,7 +427,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_2_col_soc"
-				position = {x=409 y=128}
+				position = {x=32 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -286,7 +435,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_2_soc_ega"
-				position = {x=409 y=128}
+				position = {x=32 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -294,7 +443,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_2_cen"
-				position = {x=409 y=128}
+				position = {x=32 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -302,7 +451,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_2_tra_con"
-				position = {x=409 y=128}
+				position = {x=32 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -310,7 +459,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_2_rad_dem"
-				position = {x=409 y=128}
+				position = {x=32 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -318,7 +467,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_2_chauv_pop"
-				position = {x=409 y=128}
+				position = {x=32 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -326,7 +475,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_2_aut"
-				position = {x=409 y=128}
+				position = {x=32 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -334,7 +483,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_2_fun"
-				position = {x=409 y=128}
+				position = {x=32 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -344,7 +493,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_3_van_com"
-				position = {x=441 y=128}
+				position = {x=64 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -352,7 +501,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_3_col_soc"
-				position = {x=441 y=128}
+				position = {x=64 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -360,7 +509,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_3_soc_ega"
-				position = {x=441 y=128}
+				position = {x=64 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -368,7 +517,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_3_cen"
-				position = {x=441 y=128}
+				position = {x=64 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -376,7 +525,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_3_tra_con"
-				position = {x=441 y=128}
+				position = {x=64 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -384,7 +533,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_3_rad_dem"
-				position = {x=441 y=128}
+				position = {x=64 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -392,7 +541,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_3_chauv_pop"
-				position = {x=441 y=128}
+				position = {x=64 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -400,7 +549,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_3_aut"
-				position = {x=441 y=128}
+				position = {x=64 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -408,7 +557,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_3_fun"
-				position = {x=441 y=128}
+				position = {x=64 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -418,7 +567,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_4_van_com"
-				position = {x=473 y=128}
+				position = {x=96 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -426,7 +575,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_4_col_soc"
-				position = {x=473 y=128}
+				position = {x=96 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -434,7 +583,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_4_soc_ega"
-				position = {x=473 y=128}
+				position = {x=96 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -442,7 +591,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_4_cen"
-				position = {x=473 y=128}
+				position = {x=96 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -450,7 +599,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_4_tra_con"
-				position = {x=473 y=128}
+				position = {x=96 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -458,7 +607,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_4_rad_dem"
-				position = {x=473 y=128}
+				position = {x=96 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -466,7 +615,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_4_chauv_pop"
-				position = {x=473 y=128}
+				position = {x=96 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -474,7 +623,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_4_aut"
-				position = {x=473 y=128}
+				position = {x=96 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -482,7 +631,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_4_fun"
-				position = {x=473 y=128}
+				position = {x=96 y=0}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -492,7 +641,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_5_van_com"
-				position = {x=377 y=160}
+				position = {x=0 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -500,7 +649,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_5_col_soc"
-				position = {x=377 y=160}
+				position = {x=0 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -508,7 +657,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_5_soc_ega"
-				position = {x=377 y=160}
+				position = {x=0 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -516,7 +665,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_5_cen"
-				position = {x=377 y=160}
+				position = {x=0 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -524,7 +673,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_5_tra_con"
-				position = {x=377 y=160}
+				position = {x=0 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -532,7 +681,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_5_rad_dem"
-				position = {x=377 y=160}
+				position = {x=0 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -540,7 +689,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_5_chauv_pop"
-				position = {x=377 y=160}
+				position = {x=0 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -548,7 +697,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_5_aut"
-				position = {x=377 y=160}
+				position = {x=0 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -556,7 +705,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_5_fun"
-				position = {x=377 y=160}
+				position = {x=0 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -566,7 +715,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_6_van_com"
-				position = {x=409 y=160}
+				position = {x=32 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -574,7 +723,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_6_col_soc"
-				position = {x=409 y=160}
+				position = {x=32 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -582,7 +731,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_6_soc_ega"
-				position = {x=409 y=160}
+				position = {x=32 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -590,7 +739,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_6_cen"
-				position = {x=409 y=160}
+				position = {x=32 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -598,7 +747,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_6_tra_con"
-				position = {x=409 y=160}
+				position = {x=32 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -606,7 +755,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_6_rad_dem"
-				position = {x=409 y=160}
+				position = {x=32 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -614,7 +763,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_6_aut"
-				position = {x=409 y=160}
+				position = {x=32 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -622,7 +771,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_6_chauv_pop"
-				position = {x=409 y=160}
+				position = {x=32 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -630,7 +779,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_6_fun"
-				position = {x=409 y=160}
+				position = {x=32 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -640,7 +789,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_7_van_com"
-				position = {x=441 y=160}
+				position = {x=64 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -648,7 +797,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_7_col_soc"
-				position = {x=441 y=160}
+				position = {x=64 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -656,7 +805,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_7_soc_ega"
-				position = {x=441 y=160}
+				position = {x=64 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -664,7 +813,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_7_cen"
-				position = {x=441 y=160}
+				position = {x=64 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -672,7 +821,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_7_tra_con"
-				position = {x=441 y=160}
+				position = {x=64 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -680,7 +829,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_7_rad_dem"
-				position = {x=441 y=160}
+				position = {x=64 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -688,7 +837,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_7_aut"
-				position = {x=441 y=160}
+				position = {x=64 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -696,7 +845,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_7_chauv_pop"
-				position = {x=441 y=160}
+				position = {x=64 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -704,7 +853,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_7_fun"
-				position = {x=441 y=160}
+				position = {x=64 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -714,7 +863,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_8_van_com"
-				position = {x=473 y=160}
+				position = {x=96 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -722,7 +871,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_8_col_soc"
-				position = {x=473 y=160}
+				position = {x=96 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -730,7 +879,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_8_soc_ega"
-				position = {x=473 y=160}
+				position = {x=96 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -738,7 +887,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_8_cen"
-				position = {x=473 y=160}
+				position = {x=96 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -746,7 +895,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_8_tra_con"
-				position = {x=473 y=160}
+				position = {x=96 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -754,7 +903,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_8_rad_dem"
-				position = {x=473 y=160}
+				position = {x=96 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -762,7 +911,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_8_aut"
-				position = {x=473 y=160}
+				position = {x=96 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -770,7 +919,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_8_chauv_pop"
-				position = {x=473 y=160}
+				position = {x=96 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -778,7 +927,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_8_fun"
-				position = {x=473 y=160}
+				position = {x=96 y=32}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -788,7 +937,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_9_van_com"
-				position = {x=377 y=192}
+				position = {x=0 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -796,7 +945,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_9_col_soc"
-				position = {x=377 y=192}
+				position = {x=0 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -804,7 +953,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_9_soc_ega"
-				position = {x=377 y=192}
+				position = {x=0 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -812,7 +961,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_9_cen"
-				position = {x=377 y=192}
+				position = {x=0 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -820,7 +969,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_9_tra_con"
-				position = {x=377 y=192}
+				position = {x=0 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -828,7 +977,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_9_rad_dem"
-				position = {x=377 y=192}
+				position = {x=0 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -836,7 +985,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_9_aut"
-				position = {x=377 y=192}
+				position = {x=0 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -844,7 +993,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_9_chauv_pop"
-				position = {x=377 y=192}
+				position = {x=0 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -852,7 +1001,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_9_fun"
-				position = {x=377 y=192}
+				position = {x=0 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -862,7 +1011,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_10_van_com"
-				position = {x=409 y=192}
+				position = {x=32 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -870,7 +1019,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_10_col_soc"
-				position = {x=409 y=192}
+				position = {x=32 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -878,7 +1027,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_10_soc_ega"
-				position = {x=409 y=192}
+				position = {x=32 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -886,7 +1035,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_10_cen"
-				position = {x=409 y=192}
+				position = {x=32 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -894,7 +1043,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_10_tra_con"
-				position = {x=409 y=192}
+				position = {x=32 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -902,7 +1051,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_10_rad_dem"
-				position = {x=409 y=192}
+				position = {x=32 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -910,7 +1059,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_10_aut"
-				position = {x=409 y=192}
+				position = {x=32 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -918,7 +1067,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_10_chauv_pop"
-				position = {x=409 y=192}
+				position = {x=32 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -926,7 +1075,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_10_fun"
-				position = {x=409 y=192}
+				position = {x=32 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -936,7 +1085,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_11_van_com"
-				position = {x=441 y=192}
+				position = {x=64 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -944,7 +1093,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_11_col_soc"
-				position = {x=441 y=192}
+				position = {x=64 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -952,7 +1101,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_11_soc_ega"
-				position = {x=441 y=192}
+				position = {x=64 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -960,7 +1109,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_11_cen"
-				position = {x=441 y=192}
+				position = {x=64 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -968,7 +1117,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_11_tra_con"
-				position = {x=441 y=192}
+				position = {x=64 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -976,7 +1125,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_11_rad_dem"
-				position = {x=441 y=192}
+				position = {x=64 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -984,7 +1133,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_11_aut"
-				position = {x=441 y=192}
+				position = {x=64 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -992,7 +1141,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_11_chauv_pop"
-				position = {x=441 y=192}
+				position = {x=64 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1000,7 +1149,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_11_fun"
-				position = {x=441 y=192}
+				position = {x=64 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1010,7 +1159,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_12_van_com"
-				position = {x=473 y=192}
+				position = {x=96 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1018,7 +1167,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_12_col_soc"
-				position = {x=473 y=192}
+				position = {x=96 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1026,7 +1175,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_12_soc_ega"
-				position = {x=473 y=192}
+				position = {x=96 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1034,7 +1183,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_12_cen"
-				position = {x=473 y=192}
+				position = {x=96 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1042,7 +1191,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_12_tra_con"
-				position = {x=473 y=192}
+				position = {x=96 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1050,7 +1199,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_12_rad_dem"
-				position = {x=473 y=192}
+				position = {x=96 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1058,7 +1207,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_12_aut"
-				position = {x=473 y=192}
+				position = {x=96 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1066,7 +1215,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_12_chauv_pop"
-				position = {x=473 y=192}
+				position = {x=96 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1074,7 +1223,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_12_fun"
-				position = {x=473 y=192}
+				position = {x=96 y=64}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1084,7 +1233,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_13_van_com"
-				position = {x=377 y=224}
+				position = {x=0 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1092,7 +1241,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_13_col_soc"
-				position = {x=377 y=224}
+				position = {x=0 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1100,7 +1249,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_13_soc_ega"
-				position = {x=377 y=224}
+				position = {x=0 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1108,7 +1257,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_13_cen"
-				position = {x=377 y=224}
+				position = {x=0 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1116,7 +1265,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_13_tra_con"
-				position = {x=377 y=224}
+				position = {x=0 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1124,7 +1273,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_13_rad_dem"
-				position = {x=377 y=224}
+				position = {x=0 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1132,7 +1281,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_13_aut"
-				position = {x=377 y=224}
+				position = {x=0 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1140,7 +1289,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_13_chauv_pop"
-				position = {x=377 y=224}
+				position = {x=0 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1148,7 +1297,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_13_fun"
-				position = {x=377 y=224}
+				position = {x=0 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1158,7 +1307,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_14_van_com"
-				position = {x=409 y=224}
+				position = {x=32 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1166,7 +1315,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_14_col_soc"
-				position = {x=409 y=224}
+				position = {x=32 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1174,7 +1323,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_14_soc_ega"
-				position = {x=409 y=224}
+				position = {x=32 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1182,7 +1331,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_14_cen"
-				position = {x=409 y=224}
+				position = {x=32 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1190,7 +1339,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_14_tra_con"
-				position = {x=409 y=224}
+				position = {x=32 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1198,7 +1347,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_14_rad_dem"
-				position = {x=409 y=224}
+				position = {x=32 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1206,7 +1355,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_14_aut"
-				position = {x=409 y=224}
+				position = {x=32 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1214,7 +1363,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_14_chauv_pop"
-				position = {x=409 y=224}
+				position = {x=32 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1222,7 +1371,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_14_fun"
-				position = {x=409 y=224}
+				position = {x=32 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1232,7 +1381,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_15_van_com"
-				position = {x=441 y=224}
+				position = {x=64 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1240,7 +1389,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_15_col_soc"
-				position = {x=441 y=224}
+				position = {x=64 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1248,7 +1397,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_15_soc_ega"
-				position = {x=441 y=224}
+				position = {x=64 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1256,7 +1405,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_15_cen"
-				position = {x=441 y=224}
+				position = {x=64 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1264,7 +1413,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_15_tra_con"
-				position = {x=441 y=224}
+				position = {x=64 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1272,7 +1421,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_15_rad_dem"
-				position = {x=441 y=224}
+				position = {x=64 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1280,7 +1429,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_15_aut"
-				position = {x=441 y=224}
+				position = {x=64 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1288,7 +1437,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_15_chauv_pop"
-				position = {x=441 y=224}
+				position = {x=64 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1296,7 +1445,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_15_fun"
-				position = {x=441 y=224}
+				position = {x=64 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1306,7 +1455,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_16_van_com"
-				position = {x=473 y=224}
+				position = {x=96 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1314,7 +1463,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_16_col_soc"
-				position = {x=473 y=224}
+				position = {x=96 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1322,7 +1471,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_16_soc_ega"
-				position = {x=473 y=224}
+				position = {x=96 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1330,7 +1479,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_16_cen"
-				position = {x=473 y=224}
+				position = {x=96 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1338,7 +1487,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_16_tra_con"
-				position = {x=473 y=224}
+				position = {x=96 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1346,7 +1495,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_16_rad_dem"
-				position = {x=473 y=224}
+				position = {x=96 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1354,7 +1503,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_16_aut"
-				position = {x=473 y=224}
+				position = {x=96 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1362,7 +1511,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_16_chauv_pop"
-				position = {x=473 y=224}
+				position = {x=96 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1370,7 +1519,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_16_fun"
-				position = {x=473 y=224}
+				position = {x=96 y=96}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1380,7 +1529,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_17_van_com"
-				position = {x=377 y=256}
+				position = {x=0 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1388,7 +1537,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_17_col_soc"
-				position = {x=377 y=256}
+				position = {x=0 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1396,7 +1545,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_17_soc_ega"
-				position = {x=377 y=256}
+				position = {x=0 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1404,7 +1553,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_17_cen"
-				position = {x=377 y=256}
+				position = {x=0 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1412,7 +1561,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_17_tra_con"
-				position = {x=377 y=256}
+				position = {x=0 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1420,7 +1569,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_17_rad_dem"
-				position = {x=377 y=256}
+				position = {x=0 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1428,7 +1577,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_17_aut"
-				position = {x=377 y=256}
+				position = {x=0 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1436,7 +1585,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_17_chauv_pop"
-				position = {x=377 y=256}
+				position = {x=0 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1444,7 +1593,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_17_fun"
-				position = {x=377 y=256}
+				position = {x=0 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1454,7 +1603,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_18_van_com"
-				position = {x=409 y=256}
+				position = {x=32 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1462,7 +1611,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_18_col_soc"
-				position = {x=409 y=256}
+				position = {x=32 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1470,7 +1619,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_18_soc_ega"
-				position = {x=409 y=256}
+				position = {x=32 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1478,7 +1627,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_18_cen"
-				position = {x=409 y=256}
+				position = {x=32 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1486,7 +1635,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_18_tra_con"
-				position = {x=409 y=256}
+				position = {x=32 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1494,7 +1643,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_18_rad_dem"
-				position = {x=409 y=256}
+				position = {x=32 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1502,7 +1651,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_18_aut"
-				position = {x=409 y=256}
+				position = {x=32 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1510,7 +1659,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_18_chauv_pop"
-				position = {x=409 y=256}
+				position = {x=32 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1518,7 +1667,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_18_fun"
-				position = {x=409 y=256}
+				position = {x=32 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1528,7 +1677,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_19_van_com"
-				position = {x=441 y=256}
+				position = {x=64 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1536,7 +1685,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_19_col_soc"
-				position = {x=441 y=256}
+				position = {x=64 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1544,7 +1693,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_19_soc_ega"
-				position = {x=441 y=256}
+				position = {x=64 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1552,7 +1701,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_19_cen"
-				position = {x=441 y=256}
+				position = {x=64 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1560,7 +1709,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_19_tra_con"
-				position = {x=441 y=256}
+				position = {x=64 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1568,7 +1717,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_19_rad_dem"
-				position = {x=441 y=256}
+				position = {x=64 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1576,7 +1725,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_19_aut"
-				position = {x=441 y=256}
+				position = {x=64 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1584,7 +1733,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_19_chauv_pop"
-				position = {x=441 y=256}
+				position = {x=64 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1592,7 +1741,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_19_fun"
-				position = {x=441 y=256}
+				position = {x=64 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1602,7 +1751,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_20_van_com"
-				position = {x=473 y=256}
+				position = {x=96 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1610,7 +1759,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_20_col_soc"
-				position = {x=473 y=256}
+				position = {x=96 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1618,7 +1767,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_20_soc_ega"
-				position = {x=473 y=256}
+				position = {x=96 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1626,7 +1775,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_20_cen"
-				position = {x=473 y=256}
+				position = {x=96 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1634,7 +1783,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_20_tra_con"
-				position = {x=473 y=256}
+				position = {x=96 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1642,7 +1791,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_20_rad_dem"
-				position = {x=473 y=256}
+				position = {x=96 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1650,7 +1799,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_20_aut"
-				position = {x=473 y=256}
+				position = {x=96 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1658,7 +1807,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_20_chauv_pop"
-				position = {x=473 y=256}
+				position = {x=96 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1666,7 +1815,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_20_fun"
-				position = {x=473 y=256}
+				position = {x=96 y=128}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1676,7 +1825,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_21_van_com"
-				position = {x=377 y=288}
+				position = {x=0 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1684,7 +1833,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_21_col_soc"
-				position = {x=377 y=288}
+				position = {x=0 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1692,7 +1841,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_21_soc_ega"
-				position = {x=377 y=288}
+				position = {x=0 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1700,7 +1849,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_21_cen"
-				position = {x=377 y=288}
+				position = {x=0 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1708,7 +1857,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_21_tra_con"
-				position = {x=377 y=288}
+				position = {x=0 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1716,7 +1865,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_21_rad_dem"
-				position = {x=377 y=288}
+				position = {x=0 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1724,7 +1873,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_21_aut"
-				position = {x=377 y=288}
+				position = {x=0 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1732,7 +1881,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_21_chauv_pop"
-				position = {x=377 y=288}
+				position = {x=0 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1740,7 +1889,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_21_fun"
-				position = {x=377 y=288}
+				position = {x=0 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1750,7 +1899,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_22_van_com"
-				position = {x=409 y=288}
+				position = {x=32 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1758,7 +1907,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_22_col_soc"
-				position = {x=409 y=288}
+				position = {x=32 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1766,7 +1915,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_22_soc_ega"
-				position = {x=409 y=288}
+				position = {x=32 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1774,7 +1923,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_22_cen"
-				position = {x=409 y=288}
+				position = {x=32 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1782,7 +1931,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_22_tra_con"
-				position = {x=409 y=288}
+				position = {x=32 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1790,7 +1939,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_22_rad_dem"
-				position = {x=409 y=288}
+				position = {x=32 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1798,7 +1947,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_22_aut"
-				position = {x=409 y=288}
+				position = {x=32 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1806,7 +1955,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_22_chauv_pop"
-				position = {x=409 y=288}
+				position = {x=32 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1814,7 +1963,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_22_fun"
-				position = {x=409 y=288}
+				position = {x=32 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1824,7 +1973,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_23_van_com"
-				position = {x=441 y=288}
+				position = {x=64 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1832,7 +1981,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_23_col_soc"
-				position = {x=441 y=288}
+				position = {x=64 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1840,7 +1989,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_23_soc_ega"
-				position = {x=441 y=288}
+				position = {x=64 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1848,7 +1997,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_23_cen"
-				position = {x=441 y=288}
+				position = {x=64 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1856,7 +2005,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_23_tra_con"
-				position = {x=441 y=288}
+				position = {x=64 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1864,7 +2013,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_23_rad_dem"
-				position = {x=441 y=288}
+				position = {x=64 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1872,7 +2021,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_23_aut"
-				position = {x=441 y=288}
+				position = {x=64 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1880,7 +2029,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_23_chauv_pop"
-				position = {x=441 y=288}
+				position = {x=64 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1888,7 +2037,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_23_fun"
-				position = {x=441 y=288}
+				position = {x=64 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1898,7 +2047,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_24_van_com"
-				position = {x=473 y=288}
+				position = {x=96 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1906,7 +2055,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_24_col_soc"
-				position = {x=473 y=288}
+				position = {x=96 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1914,7 +2063,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_24_soc_ega"
-				position = {x=473 y=288}
+				position = {x=96 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1922,7 +2071,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_24_cen"
-				position = {x=473 y=288}
+				position = {x=96 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -1930,7 +2079,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_24_tra_con"
-				position = {x=473 y=288}
+				position = {x=96 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -1938,7 +2087,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_24_rad_dem"
-				position = {x=473 y=288}
+				position = {x=96 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -1946,7 +2095,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_24_aut"
-				position = {x=473 y=288}
+				position = {x=96 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -1954,7 +2103,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_24_chauv_pop"
-				position = {x=473 y=288}
+				position = {x=96 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -1962,7 +2111,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_24_fun"
-				position = {x=473 y=288}
+				position = {x=96 y=160}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -1972,7 +2121,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_25_van_com"
-				position = {x=377 y=320}
+				position = {x=0 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -1980,7 +2129,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_25_col_soc"
-				position = {x=377 y=320}
+				position = {x=0 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -1988,7 +2137,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_25_soc_ega"
-				position = {x=377 y=320}
+				position = {x=0 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -1996,7 +2145,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_25_cen"
-				position = {x=377 y=320}
+				position = {x=0 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -2004,7 +2153,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_25_tra_con"
-				position = {x=377 y=320}
+				position = {x=0 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -2012,7 +2161,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_25_rad_dem"
-				position = {x=377 y=320}
+				position = {x=0 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -2020,7 +2169,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_25_aut"
-				position = {x=377 y=320}
+				position = {x=0 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -2028,7 +2177,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_25_chauv_pop"
-				position = {x=377 y=320}
+				position = {x=0 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -2036,7 +2185,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_25_fun"
-				position = {x=377 y=320}
+				position = {x=0 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -2046,7 +2195,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_26_van_com"
-				position = {x=409 y=320}
+				position = {x=32 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -2054,7 +2203,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_26_col_soc"
-				position = {x=409 y=320}
+				position = {x=32 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -2062,7 +2211,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_26_soc_ega"
-				position = {x=409 y=320}
+				position = {x=32 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -2070,7 +2219,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_26_cen"
-				position = {x=409 y=320}
+				position = {x=32 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -2078,7 +2227,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_26_tra_con"
-				position = {x=409 y=320}
+				position = {x=32 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -2086,7 +2235,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_26_rad_dem"
-				position = {x=409 y=320}
+				position = {x=32 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -2094,7 +2243,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_26_aut"
-				position = {x=409 y=320}
+				position = {x=32 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -2102,7 +2251,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_26_chauv_pop"
-				position = {x=409 y=320}
+				position = {x=32 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -2110,7 +2259,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_26_fun"
-				position = {x=409 y=320}
+				position = {x=32 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -2120,7 +2269,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_27_van_com"
-				position = {x=441 y=320}
+				position = {x=64 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -2128,7 +2277,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_27_col_soc"
-				position = {x=441 y=320}
+				position = {x=64 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -2136,7 +2285,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_27_soc_ega"
-				position = {x=441 y=320}
+				position = {x=64 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -2144,7 +2293,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_27_cen"
-				position = {x=441 y=320}
+				position = {x=64 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -2152,7 +2301,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_27_tra_con"
-				position = {x=441 y=320}
+				position = {x=64 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -2160,7 +2309,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_27_rad_dem"
-				position = {x=441 y=320}
+				position = {x=64 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -2168,7 +2317,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_27_aut"
-				position = {x=441 y=320}
+				position = {x=64 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -2176,7 +2325,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_27_chauv_pop"
-				position = {x=441 y=320}
+				position = {x=64 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -2184,7 +2333,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_27_fun"
-				position = {x=441 y=320}
+				position = {x=64 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -2194,7 +2343,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_28_van_com"
-				position = {x=473 y=320}
+				position = {x=96 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -2202,7 +2351,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_28_col_soc"
-				position = {x=473 y=320}
+				position = {x=96 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -2210,7 +2359,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_28_soc_ega"
-				position = {x=473 y=320}
+				position = {x=96 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -2218,7 +2367,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_28_cen"
-				position = {x=473 y=320}
+				position = {x=96 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -2226,7 +2375,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_28_tra_con"
-				position = {x=473 y=320}
+				position = {x=96 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -2234,7 +2383,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_28_rad_dem"
-				position = {x=473 y=320}
+				position = {x=96 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -2242,7 +2391,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_28_aut"
-				position = {x=473 y=320}
+				position = {x=96 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -2250,7 +2399,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_28_chauv_pop"
-				position = {x=473 y=320}
+				position = {x=96 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -2258,7 +2407,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_28_fun"
-				position = {x=473 y=320}
+				position = {x=96 y=192}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -2268,7 +2417,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_29_van_com"
-				position = {x=377 y=352}
+				position = {x=0 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -2276,7 +2425,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_29_col_soc"
-				position = {x=377 y=352}
+				position = {x=0 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -2284,7 +2433,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_29_soc_ega"
-				position = {x=377 y=352}
+				position = {x=0 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -2292,7 +2441,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_29_cen"
-				position = {x=377 y=352}
+				position = {x=0 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -2300,7 +2449,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_29_tra_con"
-				position = {x=377 y=352}
+				position = {x=0 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -2308,7 +2457,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_29_rad_dem"
-				position = {x=377 y=352}
+				position = {x=0 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -2316,7 +2465,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_29_aut"
-				position = {x=377 y=352}
+				position = {x=0 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -2324,7 +2473,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_29_chauv_pop"
-				position = {x=377 y=352}
+				position = {x=0 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -2332,7 +2481,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_29_fun"
-				position = {x=377 y=352}
+				position = {x=0 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -2342,7 +2491,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_30_van_com"
-				position = {x=409 y=352}
+				position = {x=32 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -2350,7 +2499,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_30_col_soc"
-				position = {x=409 y=352}
+				position = {x=32 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -2358,7 +2507,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_30_soc_ega"
-				position = {x=409 y=352}
+				position = {x=32 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -2366,7 +2515,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_30_cen"
-				position = {x=409 y=352}
+				position = {x=32 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -2374,7 +2523,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_30_tra_con"
-				position = {x=409 y=352}
+				position = {x=32 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -2382,7 +2531,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_30_rad_dem"
-				position = {x=409 y=352}
+				position = {x=32 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -2390,7 +2539,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_30_aut"
-				position = {x=409 y=352}
+				position = {x=32 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -2398,7 +2547,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_30_chauv_pop"
-				position = {x=409 y=352}
+				position = {x=32 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -2406,7 +2555,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_30_fun"
-				position = {x=409 y=352}
+				position = {x=32 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -2416,7 +2565,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_31_van_com"
-				position = {x=441 y=352}
+				position = {x=64 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -2424,7 +2573,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_31_col_soc"
-				position = {x=441 y=352}
+				position = {x=64 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -2432,7 +2581,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_31_soc_ega"
-				position = {x=441 y=352}
+				position = {x=64 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -2440,7 +2589,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_31_cen"
-				position = {x=441 y=352}
+				position = {x=64 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -2448,7 +2597,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_31_tra_con"
-				position = {x=441 y=352}
+				position = {x=64 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -2456,7 +2605,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_31_rad_dem"
-				position = {x=441 y=352}
+				position = {x=64 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -2464,7 +2613,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_31_aut"
-				position = {x=441 y=352}
+				position = {x=64 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -2472,7 +2621,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_31_chauv_pop"
-				position = {x=441 y=352}
+				position = {x=64 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -2480,7 +2629,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_31_fun"
-				position = {x=441 y=352}
+				position = {x=64 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
@@ -2490,7 +2639,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_32_van_com"
-				position = {x=473 y=352}
+				position = {x=96 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 1
 				pdx_tooltip = "EOANB_VAN_COM_PARTY_INFO"
@@ -2498,7 +2647,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_32_col_soc"
-				position = {x=473 y=352}
+				position = {x=96 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 2
 				pdx_tooltip = "EOANB_COL_SOC_PARTY_INFO"
@@ -2506,7 +2655,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_32_soc_ega"
-				position = {x=473 y=352}
+				position = {x=96 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 3
 				pdx_tooltip = "EOANB_SOC_EGA_PARTY_INFO"
@@ -2514,7 +2663,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_32_cen"
-				position = {x=473 y=352}
+				position = {x=96 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 4
 				pdx_tooltip = "EOANB_CEN_PARTY_INFO"
@@ -2522,7 +2671,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_32_tra_con"
-				position = {x=473 y=352}
+				position = {x=96 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 5
 				pdx_tooltip = "EOANB_TRA_CON_PARTY_INFO"
@@ -2530,7 +2679,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_32_rad_dem"
-				position = {x=473 y=352}
+				position = {x=96 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 6
 				pdx_tooltip = "EOANB_RAD_DEM_PARTY_INFO"
@@ -2538,7 +2687,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_32_aut"
-				position = {x=473 y=352}
+				position = {x=96 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 8
 				pdx_tooltip = "EOANB_AUT_PARTY_INFO"
@@ -2546,7 +2695,7 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_32_chauv_pop"
-				position = {x=473 y=352}
+				position = {x=96 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 7
 				pdx_tooltip = "EOANB_CHAUV_POP_PARTY_INFO"
@@ -2554,180 +2703,1028 @@ guiTypes = {
 
 			iconType = {
 				name = "internal_politics_parliament_seat_32_fun"
-				position = {x=473 y=352}
+				position = {x=96 y=224}
 				spriteType = GFX_ideology_chairs
 				frame = 9
 				pdx_tooltip = "EOANB_FUN_PARTY_INFO"
 			}
-#		}
-
-		##############################################################
-		
-		##############################################################
-
-		instantTextboxType = {
-			name = "parl_seats_title"
-			position = {x=100 y=100}
-			font = "hoi_36header"
-			text = "Parliament"
-			maxWidth = 340
-			maxHeight = 23
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "parl_van_com_seats"
-			position = {x=55 y=167}
-			font = "hoi_18mbs"
-			text = "Vanguard Communist : [?This.parl_van_com_seats_count] ([?This.parl_van_com_seats_weight] %)"
-			maxWidth = 340
-			maxHeight = 23
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "parl_col_soc_seats"
-			position = {x=55 y=188}
-			font = "hoi_18mbs"
-			text = "Collectivist Socialist : [?This.parl_col_soc_seats_count] ([?This.parl_col_soc_seats_weight] %)"
-			maxWidth = 340
-			maxHeight = 23
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "parl_soc_ega_seats"
-			position = {x=55 y=209}
-			font = "hoi_18mbs"
-			text = "Social Egalitarian : [?This.parl_soc_ega_seats_count] ([?This.parl_soc_ega_seats_weight] %)"
-			maxWidth = 340
-			maxHeight = 23
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "parl_cen_seats"
-			position = {x=55 y=230}
-			font = "hoi_18mbs"
-			text = "Centrist : [?This.parl_cen_seats_count] ([?This.parl_cen_seats_weight] %)"
-			maxWidth = 340
-			maxHeight = 23
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "parl_tra_con_seats"
-			position = {x=55 y=251}
-			font = "hoi_18mbs"
-			text = "Traditional Conservative : [?This.parl_tra_con_seats_count] ([?This.parl_tra_con_seats_weight] %)"
-			maxWidth = 340
-			maxHeight = 23
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "parl_rad_dem_seats"
-			position = {x=55 y=272}
-			font = "hoi_18mbs"
-			text = "Radical Democrat : [?This.parl_rad_dem_seats_count] ([?This.parl_rad_dem_seats_weight] %)"
-			maxWidth = 340
-			maxHeight = 23
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "parl_chauv_pop_seats"
-			position = {x=55 y=293}
-			font = "hoi_18mbs"
-			text = "Chauvinist Populist : [?This.parl_chauv_pop_seats_count] ([?This.parl_chauv_pop_seats_weight] %)"
-			maxWidth = 340
-			maxHeight = 23
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "parl_aut_seats"
-			position = {x=55 y=314}
-			font = "hoi_18mbs"
-			text = "Autocrat : [?This.parl_aut_seats_count] ([?This.parl_aut_seats_weight] %)"
-			maxWidth = 340
-			maxHeight = 23
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "parl_fun_seats"
-			position = {x=55 y=335}
-			font = "hoi_18mbs"
-			text = "Fundamentalist : [?This.parl_fun_seats_count] ([?This.parl_fun_seats_weight] %)"
-			maxWidth = 340
-			maxHeight = 23
-			format = left
-		}
-
-		instantTextboxType = {
-			name = "reform_button_text"
-			position = {x=250 y=450}
-			font = "hoi_18mbs"
-			text = "Reform"
-			maxWidth = 500
-			maxHeight = 23
-			format = left
 		}
 	}
-
+		
 	containerWindowType = {
 		name = "eoanb_internal_politics_reform_container"
-		position = {x=377 y=128}
-		size = { width=849 height=510 }
+		position = {x=300 y=200}
+		size = { width=849 height=610 }
 
-		fade_time = 300
-		fade_type = linear
 		moveable = yes
 		
 		background = {
 			name = "Background"
 			spriteType = "GFX_internal_politics_reform_window_bg"
+			position = { x = 0 y = 64 }
+		}
+
+		buttonType = {
+			name = "eoanb_reforms_escape" 
+			position = { x = 15 y = 79 }	
+			spriteType = "GFX_closebutton"
+			scale = 1
+		}
+
+		iconType = {
+			name = "internal_politics_text_container"
+			position = {x=270 y=14}
+			spriteType = GFX_bg_288_64
+		}
+
+		instantTextboxType = {
+			name = "internal_politics_text"
+			position = { x = 320 y = 24 }
+			font = "hoi_36header"
+			text = "Reforms"
+			maxWidth = 180
+			maxHeight = 100
+			format = center
 		}
 
 		iconType = {
 			name = "internal_politics_button_1"
-			position = {x=69 y=38}
+			position = {x=69 y=102}
 			spriteType = GFX_button_148x34
+		}
+
+		instantTextboxType = {
+			name = "internal_politics_button_1_text"
+			position = { x = 52 y = 110 }
+			font = "hoi_18mbs"
+			text = "Civil Liberties"
+			maxWidth = 180
+			maxHeight = 100
+			format = center
 		}
 
 		iconType = {
 			name = "internal_politics_button_2"
-			position = {x=259 y=38}
+			position = {x=259 y=102}
 			spriteType = GFX_button_148x34
+		}
+
+		instantTextboxType = {
+			name = "internal_politics_button_2_text"
+			position = { x = 242 y = 110 }
+			font = "hoi_18mbs"
+			text = "Economy"
+			maxWidth = 180
+			maxHeight = 100
+			format = center
 		}
 
 		iconType = {
 			name = "internal_politics_button_3"
-			position = {x=449 y=38}
+			position = {x=449 y=102}
 			spriteType = GFX_button_148x34
+		}
+
+		instantTextboxType = {
+			name = "internal_politics_button_3_text"
+			position = { x = 432 y = 110 }
+			font = "hoi_18mbs"
+			text = "Population"
+			maxWidth = 180
+			maxHeight = 100
+			format = center
 		}
 
 		iconType = {
 			name = "internal_politics_button_4"
-			position = {x=639 y=38}
+			position = {x=639 y=102}
 			spriteType = GFX_button_148x34
 		}
 
-		buttonType = {
-			name = "open_civ_lib_religion"
-			quadTextureSprite = "GFX_internal_politics_reform_button"
-			position = { x= 48 y = 81 }
-			pdx_tooltip = "INT_POL_TOOLTIP"
-			clicksound = click_ok
-			oversound = ui_menu_over
+		instantTextboxType = {
+			name = "internal_politics_button_4_text"
+			position = { x = 622 y = 110 }
+			font = "hoi_18mbs"
+			text = "Internal Budget"
+			maxWidth = 180
+			maxHeight = 100
+			format = center
+		}
+
+		containerWindowType = {
+			name = "eoanb_internal_politics_reform_civ_lib"
+			position = { x = 48 y = 145 }
+			size = { width=849 height=510 }
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_religion_button"
+				position = { x = 0 y = 0 }
+				size = { width=849 height=610 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_button_atheistic_state_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_atheistic_state
+					pdx_tooltip = "atheistic_state_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_button_secular_state_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_secular_state
+					pdx_tooltip = "secular_state_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_button_state_religion_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_state_religion
+					pdx_tooltip = "state_religion_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_button_theocratic_state_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_theocratic_state
+					pdx_tooltip = "theocratic_state_desc"
+				}
+
+				buttonType = {
+					name = "open_civ_lib_religion"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_education_button"
+				position = { x = 0 y = 64 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_button_oral_tradition_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_oral_tradition
+					pdx_tooltip = "oral_tradition_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_button_privileged_education_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_privileged_education
+					pdx_tooltip = "privileged_education_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_button_open_schools_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_open_schools
+					pdx_tooltip = "open_schools_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_button_compulsory_education_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_compulsory_education
+					pdx_tooltip = "compulsory_education_desc"
+				}
+
+				buttonType = {
+					name = "open_civ_lib_education"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_press_button"
+				position = { x = 0 y = 128 }
+				size = { width=849 height=510 }
+
+				buttonType = {
+					name = "open_civ_lib_press"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_freedom_assembly_button"
+				position = { x = 0 y = 192 }
+				size = { width=849 height=510 }
+
+				buttonType = {
+					name = "open_civ_lib_freedom_assembly"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_trade_union_button"
+				position = { x = 0 y = 256 }
+				size = { width=849 height=510 }
+
+				buttonType = {
+					name = "open_civ_lib_trade_union"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_gun_laws_button"
+				position = { x = 0 y = 320 }
+				size = { width=849 height=510 }
+
+				buttonType = {
+					name = "open_civ_lib_gun_laws"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+		}
+
+		containerWindowType = {
+			name = "eoanb_internal_politics_reform_eco"
+			position = { x = 237 y = 145 }
+			size = { width=849 height=510 }
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_eco_trade_laws_button"
+				position = { x = 0 y = 0 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_trade_laws_button_free_trade_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_free_trade
+					pdx_tooltip = "free_trade_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_trade_laws_button_export_focus_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_export_focus
+					pdx_tooltip = "export_focus_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_trade_laws_button_limited_exports_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_limited_exports
+					pdx_tooltip = "limited_exports_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_trade_laws_button_closed_economy_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_closed_economy
+					pdx_tooltip = "closed_economy_desc"
+				}
+
+				buttonType = {
+					name = "open_eco_trade_laws"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_eco_tax_rates_button"
+				position = { x = 0 y = 64 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_tax_rates_button_very_high_taxes_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_very_high_taxes
+					pdx_tooltip = "very_high_taxes_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_tax_rates_button_high_taxes_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_high_taxes
+					pdx_tooltip = "high_taxes_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_tax_rates_button_normal_taxes_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_normal_taxes
+					pdx_tooltip = "normal_taxes_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_tax_rates_button_low_taxes_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_low_taxes
+					pdx_tooltip = "low_taxes_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_tax_rates_button_very_low_taxes_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_very_low_taxes
+					pdx_tooltip = "very_low_taxes_desc"
+				}
+
+				buttonType = {
+					name = "open_eco_tax_rates"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_eco_child_labour_button"
+				position = { x = 0 y = 128 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_child_labour_button_cl_legal_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_cl_legal
+					pdx_tooltip = "cl_legal_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_child_labour_button_cl_restricted_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_cl_restricted
+					pdx_tooltip = "cl_restricted_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_child_labour_button_cl_illegal_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_cl_illegal
+					pdx_tooltip = "cl_illegal_desc"
+				}
+
+				buttonType = {
+					name = "open_eco_child_labour"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_eco_maximum_workhours_button"
+				position = { x = 0 y = 192 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_maximum_workhours_button_unlimited_work_day_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_unlimited_work_day
+					pdx_tooltip = "unlimited_work_day_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_maximum_workhours_button_fourteen_hour_work_day_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_fourteen_hour_work_day
+					pdx_tooltip = "fourteen_hour_work_day_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_maximum_workhours_button_twelve_hour_work_day_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_twelve_hour_work_day
+					pdx_tooltip = "twelve_hour_work_day_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_maximum_workhours_button_ten_hour_work_day_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_ten_hour_work_day
+					pdx_tooltip = "ten_hour_work_day_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_maximum_workhours_button_eight_hour_work_day_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_eight_hour_work_day
+					pdx_tooltip = "eight_hour_work_day_desc"
+				}
+
+				buttonType = {
+					name = "open_eco_maximum_workhours"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_eco_land_property_button"
+				position = { x = 0 y = 256 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_land_property_button_lp_serfdom_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_lp_serfdom
+					pdx_tooltip = "lp_serfdom_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_land_property_button_lp_land_estates_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_lp_land_estates
+					pdx_tooltip = "lp_land_estates_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_land_property_button_lp_land_purchase_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_lp_land_purchase
+					pdx_tooltip = "lp_land_purchase_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_land_property_button_lp_peasant_holdings_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_lp_peasant_holdings
+					pdx_tooltip = "lp_peasant_holdings_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_land_property_button_lp_collectivization_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_lp_collectivization
+					pdx_tooltip = "lp_collectivization_desc"
+				}
+
+				buttonType = {
+					name = "open_eco_land_property"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_eco_military_spendage_button"
+				position = { x = 0 y = 320 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_military_spendage_button_prussian_military_spendage_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_prussian_military_spendage
+					pdx_tooltip = "prussian_military_spendage_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_military_spendage_button_ten_percent_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_ten_percent
+					pdx_tooltip = "ten_percent_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_military_spendage_button_five_percent_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_five_percent
+					pdx_tooltip = "five_percent_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_military_spendage_button_three_percent_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_three_percent
+					pdx_tooltip = "three_percent_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_military_spendage_button_two_percent_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_two_percent
+					pdx_tooltip = "two_percent_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_eco_military_spendage_button_one_percent_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_one_percent
+					pdx_tooltip = "one_percent_desc"
+				}
+
+				buttonType = {
+					name = "open_eco_military_spendage"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+		}
+
+		containerWindowType = {
+			name = "eoanb_internal_politics_reform_pop"
+			position = { x = 426 y = 145 }
+			size = { width=849 height=510 }
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_pop_growth_policies_button"
+				position = { x = 0 y = 0 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_growth_policies_button_enforced_growth_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_enforced_growth
+					pdx_tooltip = "enforced_growth_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_growth_policies_button_encouraged_growth_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_encouraged_growth
+					pdx_tooltip = "encouraged_growth_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_growth_policies_button_stagnation_growth_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_stagnation_growth
+					pdx_tooltip = "stagnation_growth_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_growth_policies_button_disencouraged_growth_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_disencouraged_growth
+					pdx_tooltip = "disencouraged_growth_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_growth_policies_button_restricted_growth_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_restricted_growth
+					pdx_tooltip = "restricted_growth_desc"
+				}
+
+				buttonType = {
+					name = "open_pop_growth_policies"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_pop_border_laws_button"
+				position = { x = 0 y = 64 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_border_laws_button_closed_borders_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_closed_borders
+					pdx_tooltip = "closed_borders_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_border_laws_button_border_control_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_border_control
+					pdx_tooltip = "border_control_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_border_laws_button_open_borders_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_open_borders
+					pdx_tooltip = "open_borders_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_border_laws_button_no_borders_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_no_borders
+					pdx_tooltip = "no_borders_desc"
+				}
+
+				buttonType = {
+					name = "open_pop_border_laws"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_pop_discriminatory_laws_button"
+				position = { x = 0 y = 128 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_discriminatory_laws_button_usa_slavery_law_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_usa_slavery_law
+					pdx_tooltip = "usa_slavery_law_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_discriminatory_laws_button_tribal_slavery_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_tribal_slavery
+					pdx_tooltip = "tribal_slavery_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_discriminatory_laws_button_slavery_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_slavery
+					pdx_tooltip = "slavery_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_discriminatory_laws_button_racial_laws_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_racial_laws
+					pdx_tooltip = "racial_laws_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_discriminatory_laws_button_segregation_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_segregation
+					pdx_tooltip = "segregation_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_discriminatory_laws_button_limited_equality_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_limited_equality
+					pdx_tooltip = "limited_equality_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_discriminatory_laws_button_full_equality_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_full_equality
+					pdx_tooltip = "full_equality_desc"
+				}
+
+				buttonType = {
+					name = "open_pop_discriminatory_laws"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_pop_suffrage_button"
+				position = { x = 0 y = 192 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_suffrage_button_absolutism_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_absolutism
+					pdx_tooltip = "absolutism_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_suffrage_button_parliamentary_suffrage_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_parliamentary_suffrage
+					pdx_tooltip = "parliamentary_suffrage_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_suffrage_button_property_owners_suffrage_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_property_owners_suffrage
+					pdx_tooltip = "property_owners_suffrage_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_suffrage_button_universal_male_suffrage_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_universal_male_suffrage
+					pdx_tooltip = "universal_male_suffrage_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_suffrage_button_universal_suffrage_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_universal_suffrage
+					pdx_tooltip = "universal_suffrage_desc"
+				}
+
+				buttonType = {
+					name = "open_pop_suffrage"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_pop_mobilization_laws_button"
+				position = { x = 0 y = 256 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_disarmed_nation_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_disarmed_nation
+					pdx_tooltip = "disarmed_nation_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_volunteer_only_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_volunteer_only
+					pdx_tooltip = "volunteer_only_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_limited_conscription_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_limited_conscription
+					pdx_tooltip = "limited_conscription_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_extensive_conscription_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_extensive_conscription
+					pdx_tooltip = "extensive_conscription_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_service_by_requirement_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_service_by_requirement
+					pdx_tooltip = "service_by_requirement_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_all_adults_serve_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_all_adults_serve
+					pdx_tooltip = "all_adults_serve_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_scraping_the_barrel_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_scraping_the_barrel
+					pdx_tooltip = "scraping_the_barrel_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_manpower_tribal_warriors_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_manpower_tribal_warriors
+					pdx_tooltip = "manpower_tribal_warriors_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_manpower_tribal_every_tenth_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_manpower_tribal_every_tenth
+					pdx_tooltip = "manpower_tribal_every_tenth_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_manpower_tribal_every_fifth_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_manpower_tribal_every_fifth
+					pdx_tooltip = "manpower_tribal_every_fifth_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_manpower_tribal_everyone_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_manpower_tribal_everyone
+					pdx_tooltip = "manpower_tribal_everyone_desc"
+				}
+
+				buttonType = {
+					name = "open_pop_mobilization_laws"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_pop_womans_rights_button"
+				position = { x = 0 y = 320 }
+				size = { width=849 height=510 }
+
+				buttonType = {
+					name = "open_pop_womans_rights"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+		}
+
+		containerWindowType = {
+			name = "eoanb_internal_politics_reform_int_bud"
+			position = { x = 615 y = 145 }
+			size = { width=849 height=510 }
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_int_bud_healthcare_button"
+				position = { x = 0 y = 0 }
+				size = { width=849 height=510 }
+
+				buttonType = {
+					name = "open_int_bud_healthcare"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_int_bud_law_order_button"
+				position = { x = 0 y = 64 }
+				size = { width=849 height=510 }
+
+				buttonType = {
+					name = "open_int_bud_law_order"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_int_bud_road_maintenance_button"
+				position = { x = 0 y = 128 }
+				size = { width=849 height=510 }
+
+				buttonType = {
+					name = "open_int_bud_road_maintenance"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_int_bud_naval_infrastructure_button"
+				position = { x = 0 y = 192 }
+				size = { width=849 height=510 }
+
+				buttonType = {
+					name = "open_int_bud_naval_infrastructure"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_button"
+				position = { x = 0 y = 256 }
+				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_button_undisturbed_isolation_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_undisturbed_isolation
+					pdx_tooltip = "undisturbed_isolation_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_button_isolation_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_isolation
+					pdx_tooltip = "isolation_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_button_civilian_economy_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_civilian_economy
+					pdx_tooltip = "civilian_economy_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_button_low_economic_mobilisation_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_low_economic_mobilisation
+					pdx_tooltip = "low_economic_mobilisation_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_button_partial_economic_mobilisation_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_partial_economic_mobilisation
+					pdx_tooltip = "partial_economic_mobilisation_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_button_war_economy_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_war_economy
+					pdx_tooltip = "war_economy_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_button_tot_economic_mobilisation_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_tot_economic_mobilisation
+					pdx_tooltip = "tot_economic_mobilisation_desc"
+				}
+
+				buttonType = {
+					name = "open_int_bud_economic_mobilization"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_int_bud_research_funding_button"
+				position = { x = 0 y = 320 }
+				size = { width=849 height=510 }
+
+				buttonType = {
+					name = "open_int_bud_research_funding"
+					quadTextureSprite = "GFX_internal_politics_reform_button"
+					position = { x= 0 y = 0 }
+					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
+					clicksound = click_ok
+					oversound = ui_menu_over
+				}
+			}
 		}
 	}
 
 	containerWindowType = {
 		name = "eoanb_internal_politics_reform_civ_lib_religion_screen"
 		position = { x = 540 y = 37 }
-		size = { width=849 height=710 }
+		size = { width=371 height=510 }
 
 		fade_time = 300
 		fade_type = linear
@@ -2735,30 +3732,30 @@ guiTypes = {
 		
 		background = {
 			name = "Background"
-			spriteType = "GFX_internal_politics_reform_window_bg"
+			spriteType = "GFX_internal_politics_reform_small_window_bg"
 		}
 
 		containerWindowType = {
 			name = "grid"
 			position = { x = 20 y = 20 }
-			size = { width=500 height=600 }
+			size = { width=308 height=470 }
 			verticalScrollbar = "right_vertical_slider"
 			margin = { top = 13 bottom = 10 }
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_bg_500_600"
+				quadTextureSprite ="GFX_bg_308_470"
 			}
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state"
-				position = { x = 10 y = 10 }
-				size = { width = 480 height = 64 }
+				position = { x = 20 y = 10 }
+				size = { width = 288 height = 64 }
 				pdx_tooltip = "atheistic_state_desc"
 
 				background = {
 					name = "Background"
-					quadTextureSprite ="GFX_bg_480_64"
+					quadTextureSprite ="GFX_bg_288_64"
 				}
 
 				buttonType = {
@@ -2770,11 +3767,10 @@ guiTypes = {
 
 				buttonType = {
 					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state_check"
-					position = { x = 240 y = 0 }
-					spriteType = GFX_generic_checkbox
+					position = { x = 232 y = 12 }
+					spriteType = GFX_internal_politics_small_button
 					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
-					scale = 1.3
-					frame = 2
+					frame = 3
 				}
 
 				instantTextboxType = {
@@ -2790,13 +3786,13 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state"
-				position = { x = 10 y = 84 }
-				size = { width = 480 height = 64 }
+				position = { x = 20 y = 84 }
+				size = { width = 288 height = 64 }
 				pdx_tooltip = "secular_state_desc"
 
 				background = {
 					name = "Background"
-					quadTextureSprite ="GFX_bg_480_64"
+					quadTextureSprite ="GFX_bg_288_64"
 				}
 
 				buttonType = {
@@ -2808,11 +3804,10 @@ guiTypes = {
 
 				buttonType = {
 					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state_check"
-					position = { x = 240 y = 0 }
-					spriteType = GFX_generic_checkbox
+					position = { x = 232 y = 12 }
+					spriteType = GFX_internal_politics_small_button
 					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
-					scale = 1.3
-					frame = 2
+					frame = 3
 				}
 
 				instantTextboxType = {
@@ -2828,13 +3823,13 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion"
-				position = { x = 10 y = 158 }
-				size = { width = 480 height = 64 }
+				position = { x = 20 y = 158 }
+				size = { width = 288 height = 64 }
 				pdx_tooltip = "state_religion_desc"
 
 				background = {
 					name = "Background"
-					quadTextureSprite ="GFX_bg_480_64"
+					quadTextureSprite ="GFX_bg_288_64"
 				}
 
 				buttonType = {
@@ -2846,11 +3841,10 @@ guiTypes = {
 
 				buttonType = {
 					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion_check"
-					position = { x = 240 y = 0 }
-					spriteType = GFX_generic_checkbox
+					position = { x = 232 y = 12 }
+					spriteType = GFX_internal_politics_small_button
 					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
-					scale = 1.3
-					frame = 2
+					frame = 3
 				}
 
 				instantTextboxType = {
@@ -2866,13 +3860,13 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state"
-				position = { x = 10 y = 232 }
-				size = { width = 480 height = 64 }
+				position = { x = 22 y = 232 }
+				size = { width = 288 height = 64 }
 				pdx_tooltip = "theocratic_state_desc"
 
 				background = {
 					name = "Background"
-					quadTextureSprite ="GFX_bg_480_64"
+					quadTextureSprite ="GFX_bg_288_64"
 				}
 
 				buttonType = {
@@ -2884,11 +3878,10 @@ guiTypes = {
 
 				buttonType = {
 					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state_check"
-					position = { x = 240 y = 0 }
-					spriteType = GFX_generic_checkbox
+					position = { x = 232 y = 12 }
+					spriteType = GFX_internal_politics_small_button
 					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
-					scale = 1.3
-					frame = 2
+					frame = 3
 				}
 
 				instantTextboxType = {
