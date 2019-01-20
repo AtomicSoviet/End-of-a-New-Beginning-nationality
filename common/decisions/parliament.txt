@@ -1,0 +1,19 @@
+reform_voting_process_category = {
+	van_com_meet_party_leaders = {  
+		allowed = {   
+
+		} 
+
+		available = {
+            
+		} 
+
+		visible = {
+            
+		} 
+
+		complete_effect = { 
+			
+		} 
+	}
+}

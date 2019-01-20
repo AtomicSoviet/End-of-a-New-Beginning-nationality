@@ -416,6 +416,26 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetCurrentVotedReform
+	text = { # The Atheist State Act
+		trigger = {
+			check_variable = { 
+				var = current_reform_id
+				value = 1.1
+          		compare = equals
+			}
+		}
+		localization_key = reform_name_1_1
+	}
+}
+
+
+
+
+
+
+
+defined_text = {
 	name = GetVanComCulturalIssue
 	text = { # Reactionary
 		trigger = {

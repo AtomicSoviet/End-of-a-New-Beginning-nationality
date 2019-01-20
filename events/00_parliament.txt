@@ -30,6 +30,68 @@ country_event = {
 }
 
 country_event = {
+  id = parliament_vote.0 # 
+  title = parliament_vote.0.t
+  desc = parliament_vote.0.d
+
+  is_triggered_only = yes
+
+  immediate = {
+    hidden_effect = {
+      calculate_reform_vote_results = yes
+      analyse_reform_vote_results = yes
+
+      set_variable = { 
+        var = current_reform_id
+        value = 1.1
+      }
+    }
+  }
+
+  option = { # It's a success !
+    name = parliament_vote.0.a
+    trigger = {
+      has_country_flag = eoanb_reform_vote_success
+    }
+    clr_country_flag = eoanb_reform_vote_success
+    enact_voted_reform = yes
+
+    set_variable = { 
+      var = current_reform_id
+      value = 0
+    }
+  }
+
+  option = { # It's a failure...
+    name = parliament_vote.0.b
+    trigger = {
+      has_country_flag = eoanb_reform_vote_failure
+    }
+    clr_country_flag = eoanb_reform_vote_failure
+
+    set_variable = { 
+      var = current_reform_id
+      value = 0
+    }
+  }
+
+  option = { # This is somehow worse than a failure
+    name = parliament_vote.0.c
+    trigger = {
+      has_country_flag = eoanb_reform_vote_tie
+    }
+    clr_country_flag = eoanb_reform_vote_tie
+
+    set_variable = { 
+      var = current_reform_id
+      value = 0
+    }
+    ## MAYBE RESTART THE 2 WEEKS VOTING PROCESS AGAIN
+
+  }
+}
+
+country_event = {
   id = parliament_vote.110 # The Atheist State Act
   title = parliament_vote.110.t
   desc = parliament_vote.110.d
@@ -38,10 +100,39 @@ country_event = {
 
   option = { # Let's vote in a month
     name = parliament_vote.110.a
+
+    set_variable = { 
+      var = current_reform_id
+      value = 1.1
+    }
+
+    set_1_approval_highly_disagree = yes
+    set_2_approval_highly_disagree = yes
+    set_3_approval_neutral = yes
+    set_4_approval_highly_agree = yes
+
+    calculate_reform_approval_rate_cul = yes
   }
 
-  option = { # This is urgent, vote immediatly
+  option = { # This is urgent, vote tomorrow
     name = parliament_vote.110.b
+
+    set_variable = { 
+      var = current_reform_id
+      value = 1.1
+    }
+
+    set_1_approval_highly_disagree = yes
+    set_2_approval_highly_disagree = yes
+    set_3_approval_neutral = yes
+    set_4_approval_highly_agree = yes
+
+    calculate_reform_approval_rate_cul = yes
+
+    country_event = {
+      id = parliament_vote.0
+      days = 1
+    }
   }
 
   option = { # Abandon the idea
@@ -58,10 +149,12 @@ country_event = {
 
   option = { # Let's vote in two weeks
     name = parliament_vote.120.a
+    calculate_reform_approval_rate_cul = yes
   }
 
   option = { # This is urgent, vote immediatly
     name = parliament_vote.120.b
+    calculate_reform_approval_rate_cul = yes
   }
 
   option = { # Abandon the idea
@@ -78,10 +171,12 @@ country_event = {
 
   option = { # Let's vote in two weeks
     name = parliament_vote.130.a
+    calculate_reform_approval_rate_cul = yes
   }
 
   option = { # This is urgent, vote immediatly
     name = parliament_vote.130.b
+    calculate_reform_approval_rate_cul = yes
   }
 
   option = { # Abandon the idea
@@ -90,7 +185,7 @@ country_event = {
 }
 
 country_event = {
-  id = parliament_vote.140 # The Absolute Theocracy Act
+  id = parliament_vote.140 # The "God Above All" Act
   title = parliament_vote.140.t
   desc = parliament_vote.140.d
 
@@ -98,10 +193,12 @@ country_event = {
 
   option = { # Let's vote in two weeks
     name = parliament_vote.140.a
+    calculate_reform_approval_rate_cul = yes
   }
 
   option = { # This is urgent, vote immediatly
     name = parliament_vote.140.b
+    calculate_reform_approval_rate_cul = yes
   }
 
   option = { # Abandon the idea
