@@ -417,6 +417,17 @@ defined_text = {
 
 defined_text = {
 	name = GetCurrentVotedReform
+	text = { # The "I am ERROR" Act
+		trigger = {
+			check_variable = { 
+				var = current_reform_id
+				value = 0
+          		compare = equals
+			}
+		}
+		localization_key = reform_name_1_1
+	}
+
 	text = { # The Atheist State Act
 		trigger = {
 			check_variable = { 
@@ -426,6 +437,36 @@ defined_text = {
 			}
 		}
 		localization_key = reform_name_1_1
+	}
+	text = { # The Laïcité Act
+		trigger = {
+			check_variable = { 
+				var = current_reform_id
+				value = 1.2
+          		compare = equals
+			}
+		}
+		localization_key = reform_name_1_2
+	}
+	text = { # The State Religion Act
+		trigger = {
+			check_variable = { 
+				var = current_reform_id
+				value = 1.3
+          		compare = equals
+			}
+		}
+		localization_key = reform_name_1_3
+	}
+	text = { # The Atheist State Act
+		trigger = {
+			check_variable = { 
+				var = current_reform_id
+				value = 1.4
+          		compare = equals
+			}
+		}
+		localization_key = reform_name_1_4
 	}
 }
 

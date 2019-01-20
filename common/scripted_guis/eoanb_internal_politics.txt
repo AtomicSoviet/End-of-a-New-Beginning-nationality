@@ -37,6 +37,34 @@ scripted_gui = {
 				clr_global_flag = reform_screen_subcat_open
 				clr_global_flag = reform_civ_lib_religion
 			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_religion
+
+				country_event = { id = parliament_vote.110 }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_religion
+
+				country_event = { id = parliament_vote.120 }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_religion
+
+				country_event = { id = parliament_vote.130 }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_religion
+
+				country_event = { id = parliament_vote.140 }
+			}
 		}
 
 		triggers = {

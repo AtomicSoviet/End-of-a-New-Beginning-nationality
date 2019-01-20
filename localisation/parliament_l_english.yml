@@ -6,7 +6,7 @@
   INT_POL_REFORM_TOOLTIP:0 "§YReform§! this Law"
 
   reform_voting_process_category:0 "Parliament Voting"
-  reform_voting_process_category_desc:0 "The parliament is currently voting on the reform: §Y[Root.GetCurrentVotedReform]§! (CHANGE IT SO THAT IT DYNAMICALLY NAMES THE REFORM)\n\n    §YVanguard Communist§! approval: [?van_com_reform_approval_rate]\n    §YCollectivist Socialist§! approval: [?col_soc_reform_approval_rate]\n    §YSocial Egalitarian§! approval: [?soc_ega_reform_approval_rate]\n    §YCentrist§! approval: [?cen_reform_approval_rate]\n    §YTraditional Conservative§! approval: [?tra_con_reform_approval_rate]\n    §YRadical Democrat§! approval: [?rad_dem_reform_approval_rate]\n    §YAutocrat§! approval: [?aut_reform_approval_rate]\n    §YChauvinist Populist§! approval: [?chauv_pop_reform_approval_rate]\n    §YFundamentalist§! approval: [?fun_reform_approval_rate]"
+  reform_voting_process_category_desc:0 "The parliament is currently voting on the reform: §Y[Root.GetCurrentVotedReform]§!\n\n    §YVanguard Communist§! approval: [?van_com_reform_approval_rate|%0]\n    §YCollectivist Socialist§! approval: [?col_soc_reform_approval_rate|%0]\n    §YSocial Egalitarian§! approval: [?soc_ega_reform_approval_rate|%0]\n    §YCentrist§! approval: [?cen_reform_approval_rate|%0]\n    §YTraditional Conservative§! approval: [?tra_con_reform_approval_rate|%0]\n    §YRadical Democrat§! approval: [?rad_dem_reform_approval_rate|%0]\n    §YAutocrat§! approval: [?aut_reform_approval_rate|%0]\n    §YChauvinist Populist§! approval: [?chauv_pop_reform_approval_rate|%0]\n    §YFundamentalist§! approval: [?fun_reform_approval_rate|%0]"
 
   EOANB_VAN_COM_PARTY_INFO:0 "Party issues of the §YVanguard Communists§!: \n    Cultural Policy : §Y[Root.GetVanComCulturalIssue]§!\n    Economic Policy : §Y[Root.GetVanComEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetVanComDemographicIssue]§!\n    War Policy : §Y[Root.GetVanComWarIssue]§!"
   EOANB_COL_SOC_PARTY_INFO:0 "Party issues of the §YCollectivist Socialists§!: \n    Cultural Policy : §Y[Root.GetColSocCulturalIssue]§!\n    Economic Policy : §Y[Root.GetColSocEconomicIssue]§!\n    Demographic Policy : §Y[Root.GetColSocDemographicIssue]§!\n    War Policy : §Y[Root.GetColSocWarIssue]§!"
@@ -103,7 +103,12 @@
   var_issue_war_policies_3:0 "Anti-Militarist"
   var_issue_war_policies_4:0 "Pacifist"
 
+  reform_name_0:0 "The "I am ERROR" Act"
+
   reform_name_1_1:0 "The Atheist State Act"
+  reform_name_1_2:0 "The Laïcité Act"
+  reform_name_1_3:0 "The State Religion Act"
+  reform_name_1_4:0 "The "God Above All" Act"
 
   oral_tradition_desc:0 "Oral Tradition is the transmission of knowledge by elders and wise-mans, with no structure or official framework. \n\nWesternized countries sees this as an §gObsolete§! policy, and thus none of them supports it."
   privileged_education_desc:0 "Priviledged Education reserves the priviledge of knowledge to the richest of the people. Schools are often expensive but its courses are often high level and makes for a complete higher education. \n\n§GReactionary§! and §GConservative§! parties supports this, §YLiberal§! parties are neutral on the matter, §RProgressive§! parties are opposed to it."
@@ -162,6 +167,11 @@
   parliament_vote.0.a:0 "It's a success !"
   parliament_vote.0.b:0 "It's a failure..."
   parliament_vote.0.c:0 "This is somehow worse than a failure"
+
+  parliament_vote.100.t:0 "The Government proposes [Root.GetCurrentVotedReform]"
+  parliament_vote.100.a:0 "Let's vote in a month"
+  parliament_vote.100.b:0 "This is urgent, vote immediatly"
+  parliament_vote.100.c:0 "Abandon the idea"
 
   parliament_seats.1.t:0 "Setting starting weights"
   parliament_seats.1.d:0 ""

@@ -11,6 +11,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_report_event_generic_parliament"
+		texturefile = "gfx/event_pictures/generic/report_event_generic_parliament.dds"
+	}
+
+	spriteType = {
 		name = "GFX_decision_eoanb_parliament"
 		texturefile = "gfx/interface/decisions/decision_cat_eoanb_parliament.dds"
 	}
