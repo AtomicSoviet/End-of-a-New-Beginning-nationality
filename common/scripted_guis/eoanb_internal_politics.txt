@@ -45,11 +45,25 @@ scripted_gui = {
 				country_event = { id = parliament_vote.110 }
 			}
 
+			eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state_executive_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_religion
+
+				add_ideas = atheistic_state
+			}
+
 			eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state_check_click = {
 				clr_global_flag = reform_screen_subcat_open
 				clr_global_flag = reform_civ_lib_religion
 
 				country_event = { id = parliament_vote.120 }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state_executive_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_religion
+
+				add_ideas = secular_state
 			}
 
 			eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion_check_click = {
@@ -59,11 +73,25 @@ scripted_gui = {
 				country_event = { id = parliament_vote.130 }
 			}
 
+			eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion_executive_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_religion
+
+				add_ideas = state_religion
+			}
+
 			eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state_check_click = {
 				clr_global_flag = reform_screen_subcat_open
 				clr_global_flag = reform_civ_lib_religion
 
 				country_event = { id = parliament_vote.140 }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state_executive_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_religion
+
+				add_ideas = theocratic_state
 			}
 		}
 
@@ -147,6 +175,86 @@ scripted_gui = {
 
 			eoanb_internal_politics_reform_civ_lib_education_button_compulsory_education_icon_visible = {
 				has_idea = compulsory_education
+			}
+
+
+
+			eoanb_internal_politics_reform_civ_lib_press_button_state_controlled_press_icon_visible = {
+				has_idea = state_controlled_press
+			}
+
+			eoanb_internal_politics_reform_civ_lib_press_button_censored_press_icon_visible = {
+				has_idea = censored_press
+			}
+
+			eoanb_internal_politics_reform_civ_lib_press_button_free_press_icon_visible = {
+				has_idea = free_press
+			}
+
+
+
+			eoanb_internal_politics_reform_civ_lib_foa_button_foa_banned_icon_visible = {
+				has_idea = foa_banned
+			}
+
+			eoanb_internal_politics_reform_civ_lib_foa_button_foa_state_only_icon_visible = {
+				has_idea = foa_state_only
+			}
+
+			eoanb_internal_politics_reform_civ_lib_foa_button_foa_restricted_attendance_icon_visible = {
+				has_idea = foa_restricted_attendance
+			}
+
+			eoanb_internal_politics_reform_civ_lib_foa_button_foa_non_socialist_icon_visible = {
+				has_idea = foa_non_socialist
+			}
+
+			eoanb_internal_politics_reform_civ_lib_foa_button_foa_free_assembly_icon_visible = {
+				has_idea = foa_free_assembly
+			}
+
+
+
+			eoanb_internal_politics_reform_civ_lib_tu_button_tu_prohibited_icon_visible = {
+				has_idea = tu_prohibited
+			}
+
+			eoanb_internal_politics_reform_civ_lib_tu_button_tu_state_controlled_icon_visible = {
+				has_idea = tu_state_controlled
+			}
+
+			eoanb_internal_politics_reform_civ_lib_tu_button_tu_non_political_icon_visible = {
+				has_idea = tu_non_political
+			}
+
+			eoanb_internal_politics_reform_civ_lib_tu_button_tu_free_unions_icon_visible = {
+				has_idea = tu_free_unions
+			}
+
+			eoanb_internal_politics_reform_civ_lib_tu_button_tu_general_comitee_icon_visible = {
+				has_idea = tu_general_comitee
+			}
+
+			
+
+			eoanb_internal_politics_reform_civ_lib_education_button_kangaroo_court_icon_visible = {
+				has_idea = kangaroo_court
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_button_biased_courtroom_icon_visible = {
+				has_idea = biased_courtroom
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_button_high_judge_courtroom_icon_visible = {
+				has_idea = high_judge_courtroom
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_button_quasi_jury_court_icon_visible = {
+				has_idea = quasi_jury_court
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_button_jury_court_icon_visible = {
+				has_idea = jury_court
 			}
 
 			##################################################
@@ -433,9 +541,93 @@ scripted_gui = {
 				has_idea = manpower_tribal_everyone
 			}
 
+
+
+			eoanb_internal_politics_reform_pop_pp_button_manpower_pp_open_politics_icon_visible = {
+				has_idea = pp_open_politics
+			}
+
+			eoanb_internal_politics_reform_pop_pp_button_manpower_pp_ban_extremist_parties_icon_visible = {
+				has_idea = pp_ban_extremist_parties
+			}
+
+			eoanb_internal_politics_reform_pop_pp_button_manpower_pp_limited_party_freedom_icon_visible = {
+				has_idea = pp_limited_party_freedom
+			}
+
+			eoanb_internal_politics_reform_pop_pp_button_manpower_pp_underground_parties_icon_visible = {
+				has_idea = pp_underground_parties
+			}
+
 			##################################################
 			##################################################
 			##################################################
+
+			eoanb_internal_politics_reform_int_bud_hc_button_hc_no_healthcare_icon_visible = {
+				has_idea = hc_no_healthcare
+			}
+
+			eoanb_internal_politics_reform_int_bud_hc_button_hc_low_healthcare_icon_visible = {
+				has_idea = hc_low_healthcare
+			}
+
+			eoanb_internal_politics_reform_int_bud_hc_button_hc_decent_healthcare_icon_visible = {
+				has_idea = hc_decent_healthcare
+			}
+
+			eoanb_internal_politics_reform_int_bud_hc_button_hc_good_healthcare_icon_visible = {
+				has_idea = hc_good_healthcare
+			}
+
+			eoanb_internal_politics_reform_int_bud_hc_button_hc_excellent_healthcare_icon_visible = {
+				has_idea = hc_excellent_healthcare
+			}
+
+
+
+			eoanb_internal_politics_reform_int_bud_inframain_button_inframain_no_subsidies_infrastructure_icon_visible = {
+				has_idea = inframain_no_subsidies_infrastructure
+			}
+
+			eoanb_internal_politics_reform_int_bud_inframain_button_inframain_basic_maintenance_infrastructure_icon_visible = {
+				has_idea = inframain_basic_maintenance_infrastructure
+			}
+
+			eoanb_internal_politics_reform_int_bud_inframain_button_inframain_well_maintaned_infrastructure_icon_visible = {
+				has_idea = inframain_well_maintaned_infrastructure
+			}
+
+			eoanb_internal_politics_reform_int_bud_inframain_button_inframain_steady_network_expansion_icon_visible = {
+				has_idea = inframain_steady_network_expansion
+			}
+
+			eoanb_internal_politics_reform_int_bud_inframain_button_inframain_rapid_network_expansion_icon_visible = {
+				has_idea = inframain_rapid_network_expansion
+			}
+
+
+
+			eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_no_naval_infrastructure_icon_visible = {
+				has_idea = no_naval_infrastructure
+			}
+
+			eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_low_naval_infrastructure_icon_visible = {
+				has_idea = navinfra_low_naval_infrastructure
+			}
+
+			eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_decent_naval_infrastructure_icon_visible = {
+				has_idea = navinfra_decent_naval_infrastructure
+			}
+
+			eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_good_naval_infrastructure_icon_visible = {
+				has_idea = navinfra_good_naval_infrastructure
+			}
+
+			eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_excellent_naval_infrastructure_icon_visible = {
+				has_idea = navinfra_excellent_naval_infrastructure
+			}
+
+
 
 			eoanb_internal_politics_reform_int_bud_economic_mobilization_button_undisturbed_isolation_icon_visible = {
 				has_idea = undisturbed_isolation
@@ -463,6 +655,24 @@ scripted_gui = {
 
 			eoanb_internal_politics_reform_int_bud_economic_mobilization_button_tot_economic_mobilisation_icon_visible = {
 				has_idea = tot_economic_mobilisation
+			}
+
+
+
+			eoanb_internal_politics_reform_int_bud_sfund_button_sfund_private_ventures_only_icon_visible = {
+				has_idea = sfund_private_ventures_only
+			}
+
+			eoanb_internal_politics_reform_int_bud_sfund_button_sfund_limited_state_sponsorship_icon_visible = {
+				has_idea = sfund_limited_state_sponsorship
+			}
+
+			eoanb_internal_politics_reform_int_bud_sfund_button_sfund_regular_state_sponsorship_icon_visible = {
+				has_idea = sfund_regular_state_sponsorship
+			}
+
+			eoanb_internal_politics_reform_int_bud_sfund_button_sfund_excellent_state_sponsorship_icon_visible = {
+				has_idea = sfund_excellent_state_sponsorship
 			}
 		}
 	}

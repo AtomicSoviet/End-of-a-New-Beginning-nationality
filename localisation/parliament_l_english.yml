@@ -2,8 +2,9 @@
   EOANB_RULING_PARTY_INFO:0 "The ruling party is §Y[Root.GetRulingParty] ([Root.GetRulingIdeologyAdjectiveShort] [Root.GetSystemGovernment])§!"
   INT_POL_VOTE_REFORM_TOOLTIP:0 "Vote for this Reform"
 
-  EOANB_LEGITIMACY_SCORE:0 "[?legitimacy]"
+  EOANB_LEGITIMACY_SCORE:0 "[?legitimacy|%0]"
   INT_POL_REFORM_TOOLTIP:0 "§YReform§! this Law"
+  INT_POL_EXECUTIVE_REFORM_TOOLTIP:0 "§RExecutive Order§!"
 
   reform_voting_process_category:0 "Parliament Voting"
   reform_voting_process_category_desc:0 "The parliament is currently voting on the reform: §Y[Root.GetCurrentVotedReform]§!\n\n    §YVanguard Communist§! approval: [?van_com_reform_approval_rate|%0]\n    §YCollectivist Socialist§! approval: [?col_soc_reform_approval_rate|%0]\n    §YSocial Egalitarian§! approval: [?soc_ega_reform_approval_rate|%0]\n    §YCentrist§! approval: [?cen_reform_approval_rate|%0]\n    §YTraditional Conservative§! approval: [?tra_con_reform_approval_rate|%0]\n    §YRadical Democrat§! approval: [?rad_dem_reform_approval_rate|%0]\n    §YAutocrat§! approval: [?aut_reform_approval_rate|%0]\n    §YChauvinist Populist§! approval: [?chauv_pop_reform_approval_rate|%0]\n    §YFundamentalist§! approval: [?fun_reform_approval_rate|%0]"
@@ -22,6 +23,68 @@
   EOANB_CALL_ELECTION_BUTTON:0 "Call an §YElection§! \nCall an immediate snap election to redistribute the seats of the Parliament. This is a risky political action, but it can be used to benefit from a particularly good, but probably ephemeral, political climate. \n--------------\n§R-50§! Legislative Power\n§R-10%§! Legitimacy"
 
   colonial_government:0 "Colonial Government"
+
+  press:0 "Press"
+  state_controlled_press:0 "State Controlled Press"
+  censored_press:0 "Censored Press"
+  free_press:0 "Free Press"
+
+  freedom_of_assembly:0 "Freedom of Assembly"
+  foa_banned:0 "Banned"
+  foa_state_only:0 "State Only"
+  foa_restricted_attendance:0 "Restricted Attendance"
+  foa_non_socialist:0 "Non-Socialist"
+  foa_free_assembly:0 "Free Assembly"
+
+  trade_unions:0 "Trade Unions"
+  tu_prohibited:0 "Trade Unions Prohibited"
+  tu_state_controlled:0 "State Controlled Trade Unions"
+  tu_non_political:0 "Non-Political Trade Unions"
+  tu_free_unions:0 "Free Trade Unions"
+  tu_general_comitee:0 "General Comitee"
+
+  court:0 "Court"
+  kangaroo_court:0 "Kangaroo Court"
+  biased_courtroom:0 "Biased Courtroom"
+  high_judge_courtroom:0 "High Judge Courtroom"
+  quasi_jury_court:0 "Quasi-Jury Court"
+  jury_court:0 "Jury Court"
+
+  political_parties:0 "Political Parties"
+  pp_open_politics:0 "Open Politics"
+  pp_ban_extremist_parties:0 "Ban Extremist Parties"
+  pp_limited_party_freedom:0 "Limited Party Freedom"
+  pp_underground_parties:0 "Underground Parties"
+
+  healthcare:0 "Healthcare"
+  hc_no_healthcare:0 "No Healthcare"
+  hc_low_healthcare:0 "Low Healthcare"
+  hc_decent_healthcare:0 "Decent Healthcare"
+  hc_good_healthcare:0 "Good Healthcare"
+  hc_excellent_healthcare:0 "Excellent Healthcare"
+
+  law_and_order:0 "Law and Order"
+  law_and_order_dummy_law:0 "Law and Order Default Law §RTESTING§!"
+
+  road_maintenance:0 "Road Maintenance"
+  inframain_no_subsidies_infrastructure:0 "No Subsidies Infrastructure"
+  inframain_basic_maintenance_infrastructure:0 "Basic Maintenance Infrastructure"
+  inframain_well_maintaned_infrastructure:0 "Well Maintaned Infrastructure"
+  inframain_steady_network_expansion:0 "Steady Network Expansion"
+  inframain_rapid_network_expansion:0 "Rapid Network Expansion"
+
+  naval_infrastructure:0 "Naval Infrastructure"
+  navinfra_no_naval_infrastructure:0 "No Naval Infrastructure"
+  navinfra_low_naval_infrastructure:0 "Low Naval Infrastructure"
+  navinfra_decent_naval_infrastructure:0 "Decent Naval Infrastructure"
+  navinfra_good_naval_infrastructure:0 "Good Naval Infrastructure"
+  navinfra_excellent_naval_infrastructure:0 "Excellent Naval Infrastructure"
+
+  scientific_funding:0 "Research Funding"
+  sfund_private_ventures_only:0 "Private Ventures Only"
+  sfund_limited_state_sponsorship:0 "Limited State Sponsorship"
+  sfund_regular_state_sponsorship:0 "Regular State Sponsorship"
+  sfund_excellent_state_sponsorship:0 "Excellent State Sponsorship"
 
   parliament_name_1:0 "Parliament"
   parliament_name_2:0 "Council"

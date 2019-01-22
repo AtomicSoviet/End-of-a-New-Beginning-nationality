@@ -1,4 +1,13 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			LIE = {
+				country_event = { id = parliament_seats.1 }
+				country_event = { id = legitimacy.1 }
+			}
+		}
+	}
+
 	on_state_control_changed = { #ROOT is new controller #FROM is old controller #FROM.FROM is state ID
 		effect = {
 			if = {

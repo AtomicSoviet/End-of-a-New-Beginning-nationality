@@ -67,26 +67,57 @@ guiTypes = {
 			oversound = ui_menu_over
 		}
 
-	}
+		iconType = {
+			name = "eoanb_legitimacy_background"
+			position = {x=-298 y=-33}
+			spriteType = "GFX_generic_box_smallest"
+		}
 
-	containerWindowType = {
-		name = "eoanb_legitimacy_score_container"
-		position = { x=249 y=8 }
-		
-		instantTextBoxType = {
-			name ="eoanb_legitimacy_score_text"
-			position = { x=0 y=0 }
+		iconType ={
+			name ="legitimacy_icon"
+			spriteType = "GFX_legitimacy_icon"
+			position = { x = -296 y = -33 }
+			Orientation = "UPPER_LEFT"
+		}
+
+		instantTextboxType = {
+			name = "eoanb_legitimacy_score_text"
+			position = { x = -295 y = -29 }
 			font = "hoi_18mbs"
-			text = "TEST [?ROOT.legitimacy|0]%"
-			format = right
+			text = "EOANB_LEGITIMACY_SCORE"
 			maxWidth = 60
-			maxHeight = 24
-			fixedsize = yes
-			
-			pdx_tooltip = "EOANB_LEGITIMACY_EFFECT"
-			pdx_tooltip_delayed = "EOANB_LEGITIMACY_DELAYED_TOOLTIP"
+			maxHeight = 23
+			format = right
 		}
 	}
+
+	#containerWindowType = {
+	#	name = "eoanb_legitimacy_container"
+	#	position = { x=800 y=450 }
+	#	size = { width=583 height=492 }
+	#	
+	#	background ={
+	#		name = "Background"
+	#		spriteType = "GFX_generic_box_smallest"
+	#	}
+	#
+	#	iconType ={
+	#		name ="legitimacy_icon"
+	#		spriteType = "GFX_legitimacy_icon"
+	#		position = { x= 0 y = 0 }
+	#		Orientation = "UPPER_LEFT"
+	#	}
+	#
+	#	instantTextboxType = {
+	#		name = "eoanb_legitimacy_score_text"
+	#		position = { x = 0 y = 0 }
+	#		font = "hoi_18mbs"
+	#		text = "EOANB_LEGITIMACY_SCORE"
+	#		maxWidth = 60
+	#		maxHeight = 23
+	#		format = right
+	#	}
+	#}
 
 	containerWindowType = {
 		name = "eoanb_internal_politics_container"
@@ -2907,6 +2938,27 @@ guiTypes = {
 				position = { x = 0 y = 128 }
 				size = { width=849 height=510 }
 
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_press_button_state_controlled_press_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_state_controlled_press
+					pdx_tooltip = "state_controlled_press_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_press_button_censored_press_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_censored_press
+					pdx_tooltip = "censored_press_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_press_button_free_press_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_free_press
+					pdx_tooltip = "free_press_desc"
+				}
+
 				buttonType = {
 					name = "open_civ_lib_press"
 					quadTextureSprite = "GFX_internal_politics_reform_button"
@@ -2921,6 +2973,41 @@ guiTypes = {
 				name = "eoanb_internal_politics_reform_civ_lib_freedom_assembly_button"
 				position = { x = 0 y = 192 }
 				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_foa_button_foa_banned_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_foa_banned
+					pdx_tooltip = "foa_banned_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_foa_button_foa_state_only_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_foa_state_only
+					pdx_tooltip = "foa_state_only_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_foa_button_foa_restricted_attendance_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_foa_restricted_attendance
+					pdx_tooltip = "foa_restricted_attendance_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_foa_button_foa_non_socialist_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_foa_non_socialist
+					pdx_tooltip = "foa_non_socialist_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_foa_button_foa_free_assembly_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_foa_free_assembly
+					pdx_tooltip = "foa_free_assembly_desc"
+				}
 
 				buttonType = {
 					name = "open_civ_lib_freedom_assembly"
@@ -2937,6 +3024,41 @@ guiTypes = {
 				position = { x = 0 y = 256 }
 				size = { width=849 height=510 }
 
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_tu_button_tu_prohibited_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_tu_prohibited
+					pdx_tooltip = "tu_prohibited_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_tu_button_tu_state_controlled_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_tu_state_controlled
+					pdx_tooltip = "tu_state_controlled_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_tu_button_tu_non_political_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_tu_non_political
+					pdx_tooltip = "tu_non_political_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_tu_button_tu_free_unions_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_tu_prohibited
+					pdx_tooltip = "tu_prohibited_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_tu_button_tu_general_comitee_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_tu_general_comitee
+					pdx_tooltip = "tu_general_comitee_desc"
+				}
+
 				buttonType = {
 					name = "open_civ_lib_trade_union"
 					quadTextureSprite = "GFX_internal_politics_reform_button"
@@ -2948,12 +3070,47 @@ guiTypes = {
 			}
 
 			containerWindowType = {
-				name = "eoanb_internal_politics_reform_civ_lib_gun_laws_button"
+				name = "eoanb_internal_politics_reform_civ_lib_court_button"
 				position = { x = 0 y = 320 }
 				size = { width=849 height=510 }
 
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_button_kangaroo_court_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_kangaroo_court
+					pdx_tooltip = "kangaroo_court_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_button_biased_courtroom_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_biased_courtroom
+					pdx_tooltip = "biased_courtroom_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_button_high_judge_courtroom_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_high_judge_courtroom
+					pdx_tooltip = "high_judge_courtroom_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_button_quasi_jury_court_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_quasi_jury_court
+					pdx_tooltip = "quasi_jury_court_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_button_jury_court_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_jury_court
+					pdx_tooltip = "jury_court_desc"
+				}
+
 				buttonType = {
-					name = "open_civ_lib_gun_laws"
+					name = "open_civ_lib_court"
 					quadTextureSprite = "GFX_internal_politics_reform_button"
 					position = { x= 0 y = 0 }
 					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
@@ -3560,12 +3717,40 @@ guiTypes = {
 			}
 
 			containerWindowType = {
-				name = "eoanb_internal_politics_reform_pop_womans_rights_button"
+				name = "eoanb_internal_politics_reform_pop_political_parties_button"
 				position = { x = 0 y = 320 }
 				size = { width=849 height=510 }
 
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_pp_button_manpower_pp_open_politics_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_pp_open_politics
+					pdx_tooltip = "pp_open_politics_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_pp_button_manpower_pp_ban_extremist_parties_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_pp_ban_extremist_parties
+					pdx_tooltip = "pp_ban_extremist_parties_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_pp_button_manpower_pp_limited_party_freedom_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_pp_limited_party_freedom
+					pdx_tooltip = "pp_limited_party_freedom_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_pop_pp_button_manpower_pp_underground_parties_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_pp_underground_parties
+					pdx_tooltip = "pp_underground_parties_desc"
+				}
+
 				buttonType = {
-					name = "open_pop_womans_rights"
+					name = "open_pop_political_parties"
 					quadTextureSprite = "GFX_internal_politics_reform_button"
 					position = { x= 0 y = 0 }
 					pdx_tooltip = "INT_POL_REFORM_TOOLTIP"
@@ -3584,6 +3769,41 @@ guiTypes = {
 				name = "eoanb_internal_politics_reform_int_bud_healthcare_button"
 				position = { x = 0 y = 0 }
 				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_hc_button_hc_no_healthcare_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_hc_no_healthcare
+					pdx_tooltip = "hc_no_healthcare_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_hc_button_hc_low_healthcare_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_hc_low_healthcare
+					pdx_tooltip = "hc_low_healthcare_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_hc_button_hc_decent_healthcare_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_hc_decent_healthcare
+					pdx_tooltip = "hc_decent_healthcare_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_hc_button_hc_good_healthcare_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_hc_good_healthcare
+					pdx_tooltip = "hc_good_healthcare_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_hc_button_hc_excellent_healthcare_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_hc_excellent_healthcare
+					pdx_tooltip = "hc_excellent_healthcare_desc"
+				}
 
 				buttonType = {
 					name = "open_int_bud_healthcare"
@@ -3615,6 +3835,41 @@ guiTypes = {
 				position = { x = 0 y = 128 }
 				size = { width=849 height=510 }
 
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_inframain_button_inframain_no_subsidies_infrastructure_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_inframain_no_subsidies_infrastructure
+					pdx_tooltip = "inframain_no_subsidies_infrastructure_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_inframain_button_inframain_basic_maintenance_infrastructure_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_inframain_basic_maintenance_infrastructure
+					pdx_tooltip = "inframain_basic_maintenance_infrastructure_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_inframain_button_inframain_well_maintaned_infrastructure_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_inframain_well_maintaned_infrastructure
+					pdx_tooltip = "inframain_well_maintaned_infrastructure_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_inframain_button_inframain_steady_network_expansion_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_inframain_steady_network_expansion
+					pdx_tooltip = "inframain_steady_network_expansion_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_inframain_button_inframain_rapid_network_expansion_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_inframain_rapid_network_expansion
+					pdx_tooltip = "inframain_rapid_network_expansion_desc"
+				}
+
 				buttonType = {
 					name = "open_int_bud_road_maintenance"
 					quadTextureSprite = "GFX_internal_politics_reform_button"
@@ -3629,6 +3884,41 @@ guiTypes = {
 				name = "eoanb_internal_politics_reform_int_bud_naval_infrastructure_button"
 				position = { x = 0 y = 192 }
 				size = { width=849 height=510 }
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_no_naval_infrastructure_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_navinfra_no_naval_infrastructure
+					pdx_tooltip = "navinfra_no_naval_infrastructure_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_low_naval_infrastructure_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_navinfra_low_naval_infrastructure
+					pdx_tooltip = "navinfra_low_naval_infrastructure_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_decent_naval_infrastructure_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_navinfra_decent_naval_infrastructure
+					pdx_tooltip = "navinfra_decent_naval_infrastructure_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_good_naval_infrastructure_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_navinfra_good_naval_infrastructure
+					pdx_tooltip = "navinfra_good_naval_infrastructure_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_excellent_naval_infrastructure_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_navinfra_excellent_naval_infrastructure
+					pdx_tooltip = "navinfra_excellent_naval_infrastructure_desc"
+				}
 
 				buttonType = {
 					name = "open_int_bud_naval_infrastructure"
@@ -3709,6 +3999,34 @@ guiTypes = {
 				position = { x = 0 y = 320 }
 				size = { width=849 height=510 }
 
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_sfund_button_sfund_private_ventures_only_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_sfund_private_ventures_only
+					pdx_tooltip = "sfund_private_ventures_only_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_sfund_button_sfund_limited_state_sponsorship_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_sfund_limited_state_sponsorship
+					pdx_tooltip = "sfund_limited_state_sponsorship_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_sfund_button_sfund_regular_state_sponsorship_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_sfund_regular_state_sponsorship
+					pdx_tooltip = "sfund_regular_state_sponsorship_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_sfund_button_sfund_excellent_state_sponsorship_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_sfund_excellent_state_sponsorship
+					pdx_tooltip = "sfund_excellent_state_sponsorship_desc"
+				}
+
 				buttonType = {
 					name = "open_int_bud_research_funding"
 					quadTextureSprite = "GFX_internal_politics_reform_button"
@@ -3773,6 +4091,14 @@ guiTypes = {
 					frame = 3
 				}
 
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state_executive_check"
+					position = { x = 192 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_EXECUTIVE_REFORM_TOOLTIP"
+					frame = 4
+				}
+
 				instantTextboxType = {
 					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_atheistic_state_text"
 					position = { x = 52 y = 10 }
@@ -3808,6 +4134,14 @@ guiTypes = {
 					spriteType = GFX_internal_politics_small_button
 					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
 					frame = 3
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_secular_state_executive_check"
+					position = { x = 192 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_EXECUTIVE_REFORM_TOOLTIP"
+					frame = 4
 				}
 
 				instantTextboxType = {
@@ -3847,6 +4181,14 @@ guiTypes = {
 					frame = 3
 				}
 
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion_executive_check"
+					position = { x = 192 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_EXECUTIVE_REFORM_TOOLTIP"
+					frame = 4
+				}
+
 				instantTextboxType = {
 					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_state_religion_text"
 					position = { x = 52 y = 10 }
@@ -3882,6 +4224,14 @@ guiTypes = {
 					spriteType = GFX_internal_politics_small_button
 					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
 					frame = 3
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_screen_theocratic_state_executive_check"
+					position = { x = 192 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_EXECUTIVE_REFORM_TOOLTIP"
+					frame = 4
 				}
 
 				instantTextboxType = {
