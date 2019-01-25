@@ -1129,15 +1129,17 @@ country_event = { # Election Calculation ### NEED REWORK VANILLA
   desc = parliament_election.0.d
   picture = GFX_report_event_generic_parliament
 
-  trigger = {
-    NOT = {
-      has_idea = leader_electoral_term
-    }
-  }
+  #trigger = {
+  #  NOT = {
+  #    has_idea = leader_electoral_term
+  #  }
+  #}
+  #
+  #mean_time_to_happen = {
+  #  days = 2
+  #}
 
-  mean_time_to_happen = {
-    days = 2
-  }
+  is_triggered_only = yes
 
   immediate = {
     country_event = { id = parliament_election.1 }
@@ -10015,9 +10017,5 @@ country_event = {
         value = 3
       }
     }
-  }
-
-  option = {
-    name = parliament_election.1.i
   }
 }

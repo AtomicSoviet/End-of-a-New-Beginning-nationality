@@ -3,8 +3,17 @@
   INT_POL_VOTE_REFORM_TOOLTIP:0 "Vote for this Reform"
 
   EOANB_LEGITIMACY_SCORE:0 "[?legitimacy|%0]"
+  EOANB_LEGITIMACY_TOOLTIP:0 "You have a [GetLegitimacyState] Legitimacy."
   INT_POL_REFORM_TOOLTIP:0 "§YReform§! this Law"
   INT_POL_EXECUTIVE_REFORM_TOOLTIP:0 "§RExecutive Order§!"
+
+  legitimacy_state_0:0 "§RCatastrophic§!"
+  legitimacy_state_1:0 "§HVery Bad§!"
+  legitimacy_state_2:0 "§YBad§!"
+  legitimacy_state_3:0 "Decent"
+  legitimacy_state_4:0 "§GGood§!"
+  legitimacy_state_5:0 "§TVery Good§!"
+  legitimacy_state_6:0 "§BExcellent§!"
 
   reform_voting_process_category:0 "Parliament Voting"
   reform_voting_process_category_desc:0 "The parliament is currently voting on the reform: §Y[Root.GetCurrentVotedReform]§!\n\n    §YVanguard Communist§! approval: [?van_com_reform_approval_rate|%0]\n    §YCollectivist Socialist§! approval: [?col_soc_reform_approval_rate|%0]\n    §YSocial Egalitarian§! approval: [?soc_ega_reform_approval_rate|%0]\n    §YCentrist§! approval: [?cen_reform_approval_rate|%0]\n    §YTraditional Conservative§! approval: [?tra_con_reform_approval_rate|%0]\n    §YRadical Democrat§! approval: [?rad_dem_reform_approval_rate|%0]\n    §YAutocrat§! approval: [?aut_reform_approval_rate|%0]\n    §YChauvinist Populist§! approval: [?chauv_pop_reform_approval_rate|%0]\n    §YFundamentalist§! approval: [?fun_reform_approval_rate|%0]"
@@ -64,7 +73,11 @@
   hc_excellent_healthcare:0 "Excellent Healthcare"
 
   law_and_order:0 "Law and Order"
-  law_and_order_dummy_law:0 "Law and Order Default Law §RTESTING§!"
+  law_no_organized_force:0 "No Organized Force"
+  law_mercenary_groups:0 "Mercenary Groups"
+  law_military_police_force:0 "Military Police Force"
+  law_paramilitary_police_force:0 "Paramilitary Police Force"
+  law_police_force:0 "Police Force"
 
   road_maintenance:0 "Road Maintenance"
   inframain_no_subsidies_infrastructure:0 "No Subsidies Infrastructure"
@@ -224,6 +237,16 @@
   three_percent_desc:0 "\n\n§GPro-Militarist§! and §GAnti-Militarist§! parties supports this, §YPacifist§! parties are neutral on the matter, §RJingoist§! parties are opposed to it."
   two_percent_desc:0 "\n\n§GAnti-Militarist§! parties supports this, §YPacifist§! and §YPro-Militarist§! parties are neutral on the matter, §RJingoist§! parties are opposed to it."
   one_percent_desc:0 "\n\n§GPacifist§! parties supports this, §YAnti-Militarist§! parties are neutral on the matter, §RPro-Militarist§! and §RJingoist§! parties are opposed to it."
+
+  van_com_meet_party_leaders:0 "Meet Vanguard Communist Representatives"
+  col_soc_meet_party_leaders:0 "Meet Collectivist Socialist Representatives"
+  soc_ega_meet_party_leaders:0 "Meet Social Egalitarian Representatives"
+  cen_meet_party_leaders:0 "Meet Centrist Representatives"
+  tra_con_meet_party_leaders:0 "Meet Traditionnal Conservative Representatives"
+  rad_dem_meet_party_leaders:0 "Meet Radical Democrat Representatives"
+  aut_meet_party_leaders:0 "Meet Autocrat Representatives"
+  chauv_pop_meet_party_leaders:0 "Meet Chauvinist Populist Representatives"
+  fun_meet_party_leaders:0 "Meet Fundamentalist Representatives"
 
   parliament_vote.0.t:0 "Voting Results"
   parliament_vote.0.d:0 "Today is the day the government decides on the future of [Root.GetCurrentVotedReform]. All members from the differents parties represented voted on what they believed to be the right path forward for our nation. Whether we like the result or not, this vote is the representation of the will of our constituents.\n\nAfter a careful counting of all te votes, the final results are:\n Yay: [?reform_yay_value] \n Nay : [?reform_nay_value]"

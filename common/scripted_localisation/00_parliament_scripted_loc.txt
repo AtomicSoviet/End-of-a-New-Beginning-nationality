@@ -9,6 +9,111 @@
 # that'll be used if trigger passes
 
 defined_text = {
+	name = GetLegitimacyState
+	text = { # Catastrophic
+		trigger = {
+			check_variable = {
+				var = legitimacy
+				value = 0.1
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = legitimacy_state_0
+	}
+
+	text = { # Very Bad
+		trigger = {
+			check_variable = {
+				var = legitimacy
+				value = 0.1
+				compare = greater_than
+			}
+			check_variable = {
+				var = legitimacy
+				value = 0.25
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = legitimacy_state_1
+	}
+
+	text = { # Bad
+		trigger = {
+			check_variable = {
+				var = legitimacy
+				value = 0.25
+				compare = greater_than
+			}
+			check_variable = {
+				var = legitimacy
+				value = 0.4
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = legitimacy_state_2
+	}
+
+	text = { # Decent
+		trigger = {
+			check_variable = {
+				var = legitimacy
+				value = 0.4
+				compare = greater_than
+			}
+			check_variable = {
+				var = legitimacy
+				value = 0.6
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = legitimacy_state_3
+	}
+
+	text = { # Good
+		trigger = {
+			check_variable = {
+				var = legitimacy
+				value = 0.6
+				compare = greater_than
+			}
+			check_variable = {
+				var = legitimacy
+				value = 0.75
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = legitimacy_state_4
+	}
+
+	text = { # Very Good
+		trigger = {
+			check_variable = {
+				var = legitimacy
+				value = 0.75
+				compare = greater_than
+			}
+			check_variable = {
+				var = legitimacy
+				value = 0.9
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = legitimacy_state_5
+	}
+
+	text = { # Excellent
+		trigger = {
+			check_variable = {
+				var = legitimacy
+				value = 0.9
+				compare = greater_than
+			}
+		}
+		localization_key = legitimacy_state_6
+	}
+}
+
+defined_text = {
 	name = GetParliamentGovType
 	text = { # Parliament
 		trigger = {

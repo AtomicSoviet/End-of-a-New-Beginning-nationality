@@ -71,6 +71,7 @@ guiTypes = {
 			name = "eoanb_legitimacy_background"
 			position = {x=-298 y=-33}
 			spriteType = "GFX_generic_box_smallest"
+			pdx_tooltip = "EOANB_LEGITIMACY_TOOLTIP"
 		}
 
 		iconType ={
@@ -78,6 +79,7 @@ guiTypes = {
 			spriteType = "GFX_legitimacy_icon"
 			position = { x = -296 y = -33 }
 			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "EOANB_LEGITIMACY_TOOLTIP"
 		}
 
 		instantTextboxType = {
@@ -88,6 +90,7 @@ guiTypes = {
 			maxWidth = 60
 			maxHeight = 23
 			format = right
+			pdx_tooltip = "EOANB_LEGITIMACY_TOOLTIP"
 		}
 	}
 
@@ -2778,15 +2781,9 @@ guiTypes = {
 			format = center
 		}
 
-		iconType = {
-			name = "internal_politics_button_1"
-			position = {x=69 y=102}
-			spriteType = GFX_button_148x34
-		}
-
 		instantTextboxType = {
 			name = "internal_politics_button_1_text"
-			position = { x = 52 y = 110 }
+			position = { x = 52 y = 105 }
 			font = "hoi_18mbs"
 			text = "Civil Liberties"
 			maxWidth = 180
@@ -2794,15 +2791,9 @@ guiTypes = {
 			format = center
 		}
 
-		iconType = {
-			name = "internal_politics_button_2"
-			position = {x=259 y=102}
-			spriteType = GFX_button_148x34
-		}
-
 		instantTextboxType = {
 			name = "internal_politics_button_2_text"
-			position = { x = 242 y = 110 }
+			position = { x = 242 y = 105 }
 			font = "hoi_18mbs"
 			text = "Economy"
 			maxWidth = 180
@@ -2810,15 +2801,9 @@ guiTypes = {
 			format = center
 		}
 
-		iconType = {
-			name = "internal_politics_button_3"
-			position = {x=449 y=102}
-			spriteType = GFX_button_148x34
-		}
-
 		instantTextboxType = {
 			name = "internal_politics_button_3_text"
-			position = { x = 432 y = 110 }
+			position = { x = 432 y = 105 }
 			font = "hoi_18mbs"
 			text = "Population"
 			maxWidth = 180
@@ -2826,15 +2811,9 @@ guiTypes = {
 			format = center
 		}
 
-		iconType = {
-			name = "internal_politics_button_4"
-			position = {x=639 y=102}
-			spriteType = GFX_button_148x34
-		}
-
 		instantTextboxType = {
 			name = "internal_politics_button_4_text"
-			position = { x = 622 y = 110 }
+			position = { x = 622 y = 105 }
 			font = "hoi_18mbs"
 			text = "Internal Budget"
 			maxWidth = 180
@@ -2851,6 +2830,16 @@ guiTypes = {
 				name = "eoanb_internal_politics_reform_civ_lib_religion_button"
 				position = { x = 0 y = 0 }
 				size = { width=849 height=610 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_religion_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Religion"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_civ_lib_religion_button_atheistic_state_icon"
@@ -2892,8 +2881,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_civ_lib_education_button"
-				position = { x = 0 y = 64 }
+				position = { x = 0 y = 63 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Education"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_civ_lib_education_button_oral_tradition_icon"
@@ -2935,8 +2934,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_civ_lib_press_button"
-				position = { x = 0 y = 128 }
+				position = { x = 0 y = 126 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_press_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Press"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_civ_lib_press_button_state_controlled_press_icon"
@@ -2971,8 +2980,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_civ_lib_freedom_assembly_button"
-				position = { x = 0 y = 192 }
+				position = { x = 0 y = 189 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_freedom_assembly_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Freedom of Assembly"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_civ_lib_foa_button_foa_banned_icon"
@@ -3021,8 +3040,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_civ_lib_trade_union_button"
-				position = { x = 0 y = 256 }
+				position = { x = 0 y = 252 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_trade_union_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Trade Unions"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_civ_lib_tu_button_tu_prohibited_icon"
@@ -3071,8 +3100,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_civ_lib_court_button"
-				position = { x = 0 y = 320 }
+				position = { x = 0 y = 315 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_court_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Court"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_civ_lib_education_button_kangaroo_court_icon"
@@ -3130,6 +3169,16 @@ guiTypes = {
 				position = { x = 0 y = 0 }
 				size = { width=849 height=510 }
 
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_eco_trade_laws_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Trade Laws"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
+
 				iconType = {
 					name = "eoanb_internal_politics_reform_eco_trade_laws_button_free_trade_icon"
 					position = { x = 0 y = 0 }
@@ -3170,8 +3219,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_eco_tax_rates_button"
-				position = { x = 0 y = 64 }
+				position = { x = 0 y = 63 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_eco_tax_rates_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Tax Rates"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_eco_tax_rates_button_very_high_taxes_icon"
@@ -3220,8 +3279,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_eco_child_labour_button"
-				position = { x = 0 y = 128 }
+				position = { x = 0 y = 126 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_eco_child_labour_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Child Labor"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_eco_child_labour_button_cl_legal_icon"
@@ -3256,8 +3325,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_eco_maximum_workhours_button"
-				position = { x = 0 y = 192 }
+				position = { x = 0 y = 189 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_eco_maximum_workhours_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Maximum Workhours"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_eco_maximum_workhours_button_unlimited_work_day_icon"
@@ -3306,8 +3385,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_eco_land_property_button"
-				position = { x = 0 y = 256 }
+				position = { x = 0 y = 252 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_eco_land_property_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Land Property"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_eco_land_property_button_lp_serfdom_icon"
@@ -3356,8 +3445,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_eco_military_spendage_button"
-				position = { x = 0 y = 320 }
+				position = { x = 0 y = 315 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_eco_military_spendage_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Military Spendage"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_eco_military_spendage_button_prussian_military_spendage_icon"
@@ -3422,6 +3521,16 @@ guiTypes = {
 				position = { x = 0 y = 0 }
 				size = { width=849 height=510 }
 
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_pop_growth_policies_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Growth Policies"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
+
 				iconType = {
 					name = "eoanb_internal_politics_reform_pop_growth_policies_button_enforced_growth_icon"
 					position = { x = 0 y = 0 }
@@ -3469,8 +3578,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_pop_border_laws_button"
-				position = { x = 0 y = 64 }
+				position = { x = 0 y = 63 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_pop_border_laws_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Border Laws"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_pop_border_laws_button_closed_borders_icon"
@@ -3512,8 +3631,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_pop_discriminatory_laws_button"
-				position = { x = 0 y = 128 }
+				position = { x = 0 y = 126 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_pop_discriminatory_laws_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Discriminatory Laws"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_pop_discriminatory_laws_button_usa_slavery_law_icon"
@@ -3576,8 +3705,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_pop_suffrage_button"
-				position = { x = 0 y = 192 }
+				position = { x = 0 y = 189 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_pop_suffrage_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Suffrage"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_pop_suffrage_button_absolutism_icon"
@@ -3626,8 +3765,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_pop_mobilization_laws_button"
-				position = { x = 0 y = 256 }
+				position = { x = 0 y = 252 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_pop_mobilization_laws_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Mobilization Laws"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_pop_mobilization_laws_button_disarmed_nation_icon"
@@ -3718,8 +3867,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_pop_political_parties_button"
-				position = { x = 0 y = 320 }
+				position = { x = 0 y = 315 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_pop_political_parties_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Political Parties"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_pop_pp_button_manpower_pp_open_politics_icon"
@@ -3770,6 +3929,16 @@ guiTypes = {
 				position = { x = 0 y = 0 }
 				size = { width=849 height=510 }
 
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_int_bud_healthcare_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Healthcare"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
+
 				iconType = {
 					name = "eoanb_internal_politics_reform_int_bud_hc_button_hc_no_healthcare_icon"
 					position = { x = 0 y = 0 }
@@ -3817,8 +3986,53 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_int_bud_law_order_button"
-				position = { x = 0 y = 64 }
+				position = { x = 0 y = 63 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_int_bud_law_order_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Law and Order"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_law_button_law_no_organized_force_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_law_no_organized_force
+					pdx_tooltip = "law_no_organized_force_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_law_button_law_mercenary_groups_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_law_mercenary_groups
+					pdx_tooltip = "law_mercenary_groups_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_law_button_law_military_police_force_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_law_military_police_force
+					pdx_tooltip = "law_military_police_force_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_law_button_law_paramilitary_police_force_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_law_paramilitary_police_force
+					pdx_tooltip = "law_paramilitary_police_force_desc"
+				}
+
+				iconType = {
+					name = "eoanb_internal_politics_reform_int_bud_law_button_law_police_force_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_law_police_force
+					pdx_tooltip = "law_police_force_desc"
+				}
 
 				buttonType = {
 					name = "open_int_bud_law_order"
@@ -3832,8 +4046,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_int_bud_road_maintenance_button"
-				position = { x = 0 y = 128 }
+				position = { x = 0 y = 126 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_int_bud_road_maintenance_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Infrastructure Maintenance"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_int_bud_inframain_button_inframain_no_subsidies_infrastructure_icon"
@@ -3882,8 +4106,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_int_bud_naval_infrastructure_button"
-				position = { x = 0 y = 192 }
+				position = { x = 0 y = 189 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_int_bud_naval_infrastructure_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Naval Infrastructure"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_int_bud_navinfra_button_navinfra_no_naval_infrastructure_icon"
@@ -3932,8 +4166,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_button"
-				position = { x = 0 y = 256 }
+				position = { x = 0 y = 252 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Economic Mobilization"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_int_bud_economic_mobilization_button_undisturbed_isolation_icon"
@@ -3996,8 +4240,18 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "eoanb_internal_politics_reform_int_bud_research_funding_button"
-				position = { x = 0 y = 320 }
+				position = { x = 0 y = 315 }
 				size = { width=849 height=510 }
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_int_bud_research_funding_text"
+					position = { x = 58 y = 10 }
+					font = "hoi_18mbs"
+					text = "Research Funding"
+					maxWidth = 128
+					maxHeight = 100
+					format = center
+				}
 
 				iconType = {
 					name = "eoanb_internal_politics_reform_int_bud_sfund_button_sfund_private_ventures_only_icon"

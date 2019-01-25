@@ -83,7 +83,67 @@ ideas = {
 	law_and_order = { 
 		law = yes
 
-		law_and_order_dummy_law = {
+		law_no_organized_force = {
+						
+			cost = 450
+			removal_cost = -1
+			level = 4
+			
+			available = {
+			}
+
+			modifier = {
+			}
+			
+			cancel_if_invalid = no
+		}
+
+		law_mercenary_groups = {
+						
+			cost = 450
+			removal_cost = -1
+			level = 4
+			
+			available = {
+			}
+
+			modifier = {
+			}
+			
+			cancel_if_invalid = no
+		}
+
+		law_military_police_force = {
+						
+			cost = 450
+			removal_cost = -1
+			level = 4
+			
+			available = {
+			}
+
+			modifier = {
+			}
+			
+			cancel_if_invalid = no
+		}
+
+		law_paramilitary_police_force = {
+						
+			cost = 450
+			removal_cost = -1
+			level = 4
+			
+			available = {
+			}
+
+			modifier = {
+			}
+			
+			cancel_if_invalid = no
+		}
+
+		law_police_force = {
 						
 			cost = 450
 			removal_cost = -1

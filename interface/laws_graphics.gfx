@@ -788,6 +788,33 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/laws/budget_healthcare_excellent_healthcare.dds"
 	}
 
+		# LAW AND ORDER
+
+	spriteType = {
+		name = "GFX_idea_law_no_organized_force"
+		texturefile = "gfx/interface/ideas/laws/budget_law_and_order_no_organized_force.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_law_mercenary_groups"
+		texturefile = "gfx/interface/ideas/laws/budget_law_and_order_mercenary_groups.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_law_military_police_force"
+		texturefile = "gfx/interface/ideas/laws/budget_law_and_order_military_police_force.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_law_paramilitary_police_force"
+		texturefile = "gfx/interface/ideas/laws/budget_law_and_order_paramilitary_police_force.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_law_police_force"
+		texturefile = "gfx/interface/ideas/laws/budget_law_and_order_police_force.dds"
+	}
+
 		# INFRASTRUCTURE MAINTENANCE
 
 	spriteType = {
