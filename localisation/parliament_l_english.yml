@@ -186,6 +186,11 @@
   reform_name_1_3:0 "The State Religion Act"
   reform_name_1_4:0 "The "God Above All" Act"
 
+  reform_name_2_1:0 "The Oral Tradition Act"
+  reform_name_2_2:0 "The Education for the Wealthy Act"
+  reform_name_2_3:0 "The School for All Act"
+  reform_name_2_4:0 "The Mandatory School Act"
+
   oral_tradition_desc:0 "Oral Tradition is the transmission of knowledge by elders and wise-mans, with no structure or official framework. \n\nWesternized countries sees this as an §gObsolete§! policy, and thus none of them supports it."
   privileged_education_desc:0 "Priviledged Education reserves the priviledge of knowledge to the richest of the people. Schools are often expensive but its courses are often high level and makes for a complete higher education. \n\n§GReactionary§! and §GConservative§! parties supports this, §YLiberal§! parties are neutral on the matter, §RProgressive§! parties are opposed to it."
   open_schools_desc:0 "Schools are open for every children, poor or rich. School still have a cost, but low enough for even the workers or the farmers in the countryside. More schools will open as a result and overall literacy will increase. \n\n§GProgressive§! parties supports this, §YConservative§! and §YLiberal§! parties are neutral on the matter, §RReactionary§! parties are opposed to it."

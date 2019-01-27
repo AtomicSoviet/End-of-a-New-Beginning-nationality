@@ -318,13 +318,15 @@ country_event = { # The Oral Tradition Act
 
   is_triggered_only = yes
 
-  option = { # Let's vote in a month
-    name = parliament_vote.100.a
-
+  immediate = {
     set_variable = { 
       var = current_reform_id
       value = 2.1
     }
+  }
+
+  option = { # Let's vote in a month
+    name = parliament_vote.100.a
 
     set_1_approval_highly_disagree = yes
     set_2_approval_highly_disagree = yes
@@ -336,11 +338,6 @@ country_event = { # The Oral Tradition Act
 
   option = { # This is urgent, vote tomorrow
     name = parliament_vote.100.b
-
-    set_variable = { 
-      var = current_reform_id
-      value = 2.1
-    }
 
     set_1_approval_highly_disagree = yes
     set_2_approval_highly_disagree = yes
@@ -357,6 +354,11 @@ country_event = { # The Oral Tradition Act
 
   option = { # Abandon the idea
     name = parliament_vote.100.c
+
+    set_variable = { 
+      var = current_reform_id
+      value = 0
+    }
   }
 }
 
@@ -367,6 +369,13 @@ country_event = { # The Education for the Wealthy Act
   picture = GFX_report_event_generic_parliament
 
   is_triggered_only = yes
+
+  immediate = {
+    set_variable = { 
+      var = current_reform_id
+      value = 2.2
+    }
+  }
 
   option = { # Let's vote in a month
     name = parliament_vote.120.a
@@ -391,6 +400,13 @@ country_event = { # The School for All Act
 
   is_triggered_only = yes
 
+  immediate = {
+    set_variable = { 
+      var = current_reform_id
+      value = 2.3
+    }
+  }
+
   option = { # Let's vote in a month
     name = parliament_vote.130.a
     calculate_reform_approval_rate_cul = yes
@@ -413,6 +429,13 @@ country_event = { # The Mandatory School Act
   picture = GFX_report_event_generic_parliament
 
   is_triggered_only = yes
+
+  immediate = {
+    set_variable = { 
+      var = current_reform_id
+      value = 2.4
+    }
+  }
 
   option = { # Let's vote in a month
     name = parliament_vote.100.a

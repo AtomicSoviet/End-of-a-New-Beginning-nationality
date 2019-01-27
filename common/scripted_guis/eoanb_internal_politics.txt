@@ -114,6 +114,97 @@ scripted_gui = {
 		}
 	}
 
+	internal_politics_reform_civ_lib_education_screen = {
+		context_type = player_context
+
+		window_name = "eoanb_internal_politics_reform_civ_lib_education_screen"
+
+		visible = {
+			has_global_flag = reform_civ_lib_education
+		}
+
+		effects = {
+			close_reform_civ_lib_education_screen_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_education
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_oral_tradition_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_education
+
+				country_event = { id = parliament_vote.210 }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_oral_tradition_executive_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_education
+
+				add_ideas = oral_tradition
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_privileged_education_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_education
+
+				country_event = { id = parliament_vote.220 }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_privileged_education_executive_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_education
+
+				add_ideas = privileged_education
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_open_schools_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_education
+
+				country_event = { id = parliament_vote.230 }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_open_schools_executive_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_education
+
+				add_ideas = open_schools
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_compulsory_education_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_education
+
+				country_event = { id = parliament_vote.240 }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_compulsory_education_executive_check_click = {
+				clr_global_flag = reform_screen_subcat_open
+				clr_global_flag = reform_civ_lib_education
+
+				add_ideas = compulsory_education
+			}
+		}
+
+		triggers = {
+			eoanb_internal_politics_reform_civ_lib_education_screen_oral_tradition_check_visible = {
+				NOT = { has_idea = oral_tradition }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_privileged_education_check_visible = {
+				NOT = { has_idea = privileged_education }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_open_schools_check_visible = {
+				NOT = { has_idea = open_schools }
+			}
+
+			eoanb_internal_politics_reform_civ_lib_education_screen_compulsory_education_check_visible = {
+				NOT = { has_idea = compulsory_education }
+			}
+		}
+	}
+
 	internal_politics_reform_screen = {
 		context_type = player_context
 
@@ -138,6 +229,14 @@ scripted_gui = {
 					limit = { NOT = { has_global_flag = reform_screen_subcat_open } }
 					set_global_flag = reform_screen_subcat_open
 					set_global_flag = reform_civ_lib_religion
+				}
+			}
+
+			open_civ_lib_education_click = {
+				if = {
+					limit = { NOT = { has_global_flag = reform_screen_subcat_open } }
+					set_global_flag = reform_screen_subcat_open
+					set_global_flag = reform_civ_lib_education
 				}
 			}
 		}

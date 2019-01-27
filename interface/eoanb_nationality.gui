@@ -4358,7 +4358,7 @@ guiTypes = {
 					position = { x = 52 y = 10 }
 					font = "hoi_18mbs"
 					text = "atheistic_state"
-					maxWidth = 180
+					maxWidth = 140
 					maxHeight = 100
 					format = center
 				}
@@ -4403,7 +4403,7 @@ guiTypes = {
 					position = { x = 52 y = 10 }
 					font = "hoi_18mbs"
 					text = "secular_state"
-					maxWidth = 180
+					maxWidth = 140
 					maxHeight = 100
 					format = center
 				}
@@ -4448,7 +4448,7 @@ guiTypes = {
 					position = { x = 52 y = 10 }
 					font = "hoi_18mbs"
 					text = "state_religion"
-					maxWidth = 180
+					maxWidth = 140
 					maxHeight = 100
 					format = center
 				}
@@ -4493,7 +4493,7 @@ guiTypes = {
 					position = { x = 52 y = 10 }
 					font = "hoi_18mbs"
 					text = "theocratic_state"
-					maxWidth = 180
+					maxWidth = 140
 					maxHeight = 100
 					format = center
 				}
@@ -4502,6 +4502,221 @@ guiTypes = {
 
 		buttonType = {
 			name = "close_reform_civ_lib_religion_screen"
+			position = { x = 15 y = 15 }
+			spriteType = "GFX_closebutton"
+			scale = 1
+		}
+	}
+
+	containerWindowType = {
+		name = "eoanb_internal_politics_reform_civ_lib_education_screen"
+		position = { x = 540 y = 37 }
+		size = { width=371 height=510 }
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_internal_politics_reform_small_window_bg"
+		}
+
+		containerWindowType = {
+			name = "grid"
+			position = { x = 20 y = 20 }
+			size = { width=308 height=470 }
+			verticalScrollbar = "right_vertical_slider"
+			margin = { top = 13 bottom = 10 }
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_bg_308_470"
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_education_screen_oral_tradition"
+				position = { x = 20 y = 10 }
+				size = { width = 288 height = 64 }
+				pdx_tooltip = "oral_tradition_desc"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_bg_288_64"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_oral_tradition_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_oral_tradition
+					pdx_tooltip = "oral_tradition_desc"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_oral_tradition_check"
+					position = { x = 232 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
+					frame = 3
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_oral_tradition_executive_check"
+					position = { x = 192 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_EXECUTIVE_REFORM_TOOLTIP"
+					frame = 4
+				}
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_oral_tradition_text"
+					position = { x = 52 y = 10 }
+					font = "hoi_18mbs"
+					text = "oral_tradition"
+					maxWidth = 140
+					maxHeight = 100
+					format = center
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_education_screen_privileged_education"
+				position = { x = 20 y = 84 }
+				size = { width = 288 height = 64 }
+				pdx_tooltip = "privileged_education_desc"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_bg_288_64"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_privileged_education_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_privileged_education
+					pdx_tooltip = "privileged_education_desc"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_privileged_education_check"
+					position = { x = 232 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
+					frame = 3
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_privileged_education_executive_check"
+					position = { x = 192 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_EXECUTIVE_REFORM_TOOLTIP"
+					frame = 4
+				}
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_privileged_education_text"
+					position = { x = 52 y = 10 }
+					font = "hoi_18mbs"
+					text = "privileged_education"
+					maxWidth = 140
+					maxHeight = 100
+					format = center
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_education_screen_open_schools"
+				position = { x = 20 y = 158 }
+				size = { width = 288 height = 64 }
+				pdx_tooltip = "open_schools_desc"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_bg_288_64"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_open_schools_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_open_schools
+					pdx_tooltip = "open_schools_desc"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_open_schools_check"
+					position = { x = 232 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
+					frame = 3
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_open_schools_executive_check"
+					position = { x = 192 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_EXECUTIVE_REFORM_TOOLTIP"
+					frame = 4
+				}
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_open_schools_text"
+					position = { x = 52 y = 10 }
+					font = "hoi_18mbs"
+					text = "open_schools"
+					maxWidth = 140
+					maxHeight = 100
+					format = center
+				}
+			}
+
+			containerWindowType = {
+				name = "eoanb_internal_politics_reform_civ_lib_education_screen_compulsory_education"
+				position = { x = 22 y = 232 }
+				size = { width = 288 height = 64 }
+				pdx_tooltip = "compulsory_education_desc"
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_bg_288_64"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_compulsory_education_icon"
+					position = { x = 0 y = 0 }
+					spriteType = GFX_idea_compulsory_education
+					pdx_tooltip = "compulsory_education_desc"
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_compulsory_education_check"
+					position = { x = 232 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_VOTE_REFORM_TOOLTIP"
+					frame = 3
+				}
+
+				buttonType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_compulsory_education_executive_check"
+					position = { x = 192 y = 12 }
+					spriteType = GFX_internal_politics_small_button
+					pdx_tooltip = "INT_POL_EXECUTIVE_REFORM_TOOLTIP"
+					frame = 4
+				}
+
+				instantTextboxType = {
+					name = "eoanb_internal_politics_reform_civ_lib_education_screen_compulsory_education_text"
+					position = { x = 52 y = 10 }
+					font = "hoi_18mbs"
+					text = "compulsory_education"
+					maxWidth = 140
+					maxHeight = 100
+					format = center
+				}
+			}
+		}
+
+		buttonType = {
+			name = "close_reform_civ_lib_education_screen"
 			position = { x = 15 y = 15 }
 			spriteType = "GFX_closebutton"
 			scale = 1

@@ -4,14 +4,13 @@ guiTypes = {
 		position = { x = 592 y = 37 }
 
 		buttonType = {
-			name = "open_strata"
+			name = "open_strata_screen"
 			quadTextureSprite = "GFX_strata_open"
 			position = { x= 0 y = 0 }
 			pdx_tooltip = "INT_POL_TOOLTIP"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
-
 	}
 
 	containerWindowType = {

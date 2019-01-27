@@ -9,7 +9,7 @@ scripted_gui = {
 		}
 
 		effects = {
-			open_strata_click = {
+			open_strata_screen_click = {
 				if = {
 					limit = { NOT = { has_global_flag = strata_screen_opened } }
 					set_global_flag = strata_screen_opened
@@ -17,7 +17,9 @@ scripted_gui = {
 			}
 		}
 		triggers = {
-
+			open_TTT_click_enabled = {
+				NOT = { has_global_flag = TTT_daily_refresh }
+			}
 		}
 	}
 

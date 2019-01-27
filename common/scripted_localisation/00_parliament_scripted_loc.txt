@@ -573,6 +573,48 @@ defined_text = {
 		}
 		localization_key = reform_name_1_4
 	}
+
+
+	text = { # The Oral Tradition Act
+		trigger = {
+			check_variable = { 
+				var = current_reform_id
+				value = 2.1
+          		compare = equals
+			}
+		}
+		localization_key = reform_name_2_1
+	}
+	text = { # The Education for the Wealthy Act
+		trigger = {
+			check_variable = { 
+				var = current_reform_id
+				value = 2.2
+          		compare = equals
+			}
+		}
+		localization_key = reform_name_2_2
+	}
+	text = { # The School for All Act
+		trigger = {
+			check_variable = { 
+				var = current_reform_id
+				value = 2.3
+          		compare = equals
+			}
+		}
+		localization_key = reform_name_2_3
+	}
+	text = { # The Mandatory School Act
+		trigger = {
+			check_variable = { 
+				var = current_reform_id
+				value = 2.4
+          		compare = equals
+			}
+		}
+		localization_key = reform_name_2_4
+	}
 }
 
 

@@ -196,4 +196,94 @@ reform_voting_process_category = {
 			
 		} 
 	}
+
+	make_speech_in_parliament = {
+		allowed = {   
+
+		} 
+
+		available = {
+            
+		} 
+
+		visible = {
+
+		} 
+
+		complete_effect = { 
+			
+		} 
+	}
+
+	make_political_deals = {
+		allowed = {   
+
+		} 
+
+		available = {
+            
+		} 
+
+		visible = {
+           
+		} 
+
+		complete_effect = { 
+			
+		} 
+	}
+
+	convince_opposition_leaders = {
+		allowed = {   
+
+		} 
+
+		available = {
+            
+		} 
+
+		visible = {
+           
+		} 
+
+		complete_effect = { 
+			
+		} 
+	}
+
+	pressure_the_lobbies = {
+		allowed = {   
+
+		} 
+
+		available = {
+            
+		} 
+
+		visible = {
+           
+		} 
+
+		complete_effect = { 
+			
+		} 
+	}
+
+	buy_out_politicians = {
+		allowed = {   
+
+		} 
+
+		available = {
+            
+		} 
+
+		visible = {
+           
+		} 
+
+		complete_effect = { 
+			
+		} 
+	}
 }
